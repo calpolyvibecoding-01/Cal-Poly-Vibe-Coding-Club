@@ -153,7 +153,7 @@ export function SlackInviteModal({
                     Let us prove you wrong. Join our Slack to get details on
                     future club meetings and events.
                   </p>
-                  <div className="mt-5 max-w-xl border-t border-zinc-900/15 pt-3">
+                  <div className="mt-8 max-w-xl border-t border-zinc-900/15 pt-3">
                     <p className="text-sm font-medium tracking-[0.08em] text-zinc-700 md:text-sm">
                       <span className="text-zinc-900">NEXT MEETING</span>
                       &nbsp;|&nbsp;Timing TBD. Fill out the interest form below
