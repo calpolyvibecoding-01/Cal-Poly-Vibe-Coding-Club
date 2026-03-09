@@ -196,11 +196,15 @@ export function FreshReveal({
 
       <h1
         ref={headingRef}
-        className={`pointer-events-none absolute left-0 right-0 top-0 z-0 flex h-screen select-none items-center justify-center text-center text-6xl font-light leading-tight tracking-tight text-zinc-200 md:text-8xl ${
+        className={`pointer-events-none absolute left-0 right-0 top-0 z-0 flex h-screen select-none items-center justify-center text-center text-zinc-200 ${
           introAlreadyPlayed ? "opacity-100" : "opacity-0"
         }`}
       >
-        Cal Poly Vibe Coding
+        <span className="hero-wordmark">
+          <span className="hero-wordmark-calpoly-coding">CAL POLY</span>{" "}
+          <span className="hero-wordmark-vibe">VIBE</span>{" "}
+          <span className="hero-wordmark-calpoly-coding">CODING</span>
+        </span>
       </h1>
 
       <div
