@@ -188,11 +188,17 @@
   }
 
   .hero-wordmark {
+    line-height: 0.98;
     display: inline-block;
     max-width: 100%;
-    font-size: clamp(1rem, 6.25vw, 6rem);
-    line-height: 0.95;
-    white-space: nowrap;
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  @media (min-width: 1280px) {
+    .hero-wordmark {
+      white-space: nowrap;
+    }
   }
 
   .hero-wordmark-base {

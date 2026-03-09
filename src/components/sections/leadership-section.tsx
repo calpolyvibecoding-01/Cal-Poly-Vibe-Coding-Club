@@ -200,7 +200,11 @@ function OpenRoleCard({
   const roleNumber = String(index + 1).padStart(2, "0");
 
   return (
-    <motion.article
+    <motion.a
+      href={siteConfig.applicationForm}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Apply for ${role.title}`}
       initial={disableAnimation ? false : { opacity: 0, y: 24 }}
       animate={disableAnimation ? { opacity: 1, y: 0 } : undefined}
       whileInView={disableAnimation ? undefined : { opacity: 1, y: 0 }}
@@ -230,16 +234,11 @@ function OpenRoleCard({
       </h3>
       <div className="mt-6 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-zinc-500">
         <span className="h-px w-8 bg-zinc-300 transition-all duration-300 group-hover:w-10 group-hover:bg-zinc-500" />
-        <a
-          href={siteConfig.applicationForm}
-          target="_blank"
-          rel="noreferrer"
-          className="transition-colors hover:text-zinc-900 hover:underline"
-        >
+        <span className="transition-colors group-hover:text-zinc-900 group-hover:underline">
           Apply Here
-        </a>
+        </span>
       </div>
-    </motion.article>
+    </motion.a>
   );
 }
 
