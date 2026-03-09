@@ -187,7 +187,7 @@ export function FreshReveal({
     >
       <h3
         ref={taglineRef}
-        className={`hero-h3 absolute top-16 z-20 select-none text-[20px] tracking-[0.26em] text-brand-900 md:left-20 md:text-[25px]  ${
+        className={`hero-h3 absolute top-16 z-20 select-none text-[20px] tracking-[0.26em] !text-zinc-700  md:left-20 md:text-[25px]  ${
           introAlreadyPlayed ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -196,7 +196,7 @@ export function FreshReveal({
 
       <h1
         ref={headingRef}
-        className={`pointer-events-none absolute left-0 right-0 top-0 z-0 flex h-screen select-none items-center justify-center text-center text-5xl text-zinc-200 md:text-9xl sm:text-wrap ${
+        className={`pointer-events-none absolute left-0 right-0 top-0 z-0 flex h-screen select-none items-center justify-center text-center text-5xl text-black md:text-9xl sm:text-wrap ${
           introAlreadyPlayed ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -239,7 +239,7 @@ export function FreshReveal({
         <div className="flex w-full flex-col items-end self-end md:w-auto">
           <h3
             ref={subheadingRef}
-            className={`hero-h3 mb-8 max-w-2xl text-center md:text-right text-lg text-black/70 md:text-2xl ${
+            className={`hero-h3 mb-8 max-w-2xl text-center md:text-right text-lg !text-zinc-700 md:text-2xl ${
               introAlreadyPlayed ? "opacity-100" : "opacity-0"
             }`}
           >
