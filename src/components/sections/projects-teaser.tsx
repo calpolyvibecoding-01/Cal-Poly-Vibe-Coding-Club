@@ -349,7 +349,7 @@ export function ProjectsTeaser() {
               <span className="rounded-full border border-brand-100/30 bg-brand-900/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-100/75">
                 {TEMP_MOBILE_CARD.badge}
               </span>
-              <span className="pt-1 text-[10px] uppercase tracking-[0.2em] text-brand-100/50">
+              <span className="pt-1 text-[10px] uppercase tracking-[0.2em] !text-brand-100/50">
                 Vibe Coding Club
               </span>
             </div>
@@ -357,13 +357,13 @@ export function ProjectsTeaser() {
             <div className="relative mt-4 h-px bg-brand-100/20" />
 
             <div className="relative mt-4">
-              <p className="m-0 text-[10px] uppercase tracking-[0.18em] text-brand-100/70">
+              <p className="m-0 text-[10px] uppercase tracking-[0.18em] !text-brand-100/70">
                 Featured Slot
               </p>
-              <h3 className="mt-1 text-xl font-light tracking-tight text-neutral-100">
+              <h3 className="mt-1 text-xl font-light tracking-tight !text-neutral-100">
                 {TEMP_MOBILE_CARD.title}
               </h3>
-              <p className="mt-2 text-sm tracking-[0.01em] text-brand-100/80">
+              <p className="mt-2 text-sm tracking-[0.01em] !text-brand-100/80">
                 {TEMP_MOBILE_CARD.sub}
               </p>
             </div>

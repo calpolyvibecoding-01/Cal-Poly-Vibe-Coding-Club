@@ -196,7 +196,7 @@ export function FreshReveal({
 
       <h1
         ref={headingRef}
-        className={`pointer-events-none absolute left-0 right-0 top-0 z-0 flex h-screen select-none items-center justify-center text-center text-6xl text-zinc-200 md:text-8xl ${
+        className={`pointer-events-none absolute left-0 right-0 top-0 z-0 flex h-screen w-full select-none items-center justify-center px-4 text-center text-zinc-200 sm:px-6 ${
           introAlreadyPlayed ? "opacity-100" : "opacity-0"
         }`}
       >
