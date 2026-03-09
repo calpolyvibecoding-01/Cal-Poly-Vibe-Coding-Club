@@ -1,6 +1,5 @@
 # Vibe Coding Club Website (Next.js Migration)
 
-
 ## Project overview
 This repository was migrated from a working Vite + React single-page site into a production-oriented **Next.js App Router** app while preserving the same visual layout, sections, animation behavior, and copy.
 
