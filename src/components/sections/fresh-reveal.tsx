@@ -185,14 +185,14 @@ export function FreshReveal({
       ref={sectionRef}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-0 py-0"
     >
-      <p
+      <h3
         ref={taglineRef}
-        className={`absolute left-12 top-16 z-20 select-none text-[20px] tracking-[0.26em] text-brand-900 md:left-20 md:text-[25px]  ${
+        className={`hero-h3 absolute left-12 top-16 z-20 select-none text-[20px] tracking-[0.26em] text-brand-900 md:left-20 md:text-[25px]  ${
           introAlreadyPlayed ? "opacity-100" : "opacity-0"
         }`}
       >
         <TextScramble text="Create, Learn, Explore" className="font-sans" autoScramble={false} />
-      </p>
+      </h3>
 
       <h1
         ref={headingRef}
@@ -237,16 +237,16 @@ export function FreshReveal({
 
       <div className="container relative z-10 flex w-full flex-col justify-end pb-8 pt-[70vh] md:pb-12">
         <div className="flex w-full flex-col items-end self-end md:w-auto">
-          <p
+          <h3
             ref={subheadingRef}
-            className={`mb-8 max-w-2xl text-right text-lg font-light leading-relaxed tracking-[0.01em] text-black/70 md:text-2xl ${
+            className={`hero-h3 mb-8 max-w-2xl text-right text-lg text-black/70 md:text-2xl ${
               introAlreadyPlayed ? "opacity-100" : "opacity-0"
             }`}
           >
             Make stunning, intentional projects - all without writing a single
             line of code.
-          </p>
-          <div className="flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-4 md:w-auto">
+          </h3>
+          <div className="flex w-full flex-col items-stretch mt-4 gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-4 md:w-auto">
             <MagneticButton
               ref={buttonRef}
               onClick={onJoinSlackClick}

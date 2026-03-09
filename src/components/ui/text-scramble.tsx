@@ -106,7 +106,7 @@ export function TextScramble({
     <span
       ref={containerRef}
       onMouseEnter={scramble}
-      className={`cursor-default font-mono ${className}`}
+      className={`cursor-default ${className}`}
     >
       {display}
     </span>
