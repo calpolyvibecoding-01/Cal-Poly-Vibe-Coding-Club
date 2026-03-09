@@ -187,11 +187,11 @@ export function FreshReveal({
     >
       <h3
         ref={taglineRef}
-        className={`hero-h3 absolute left-12 top-16 z-20 select-none text-[20px] tracking-[0.26em] text-brand-900 md:left-20 md:text-[25px]  ${
+        className={`hero-h3 absolute top-16 z-20 select-none text-[20px] tracking-[0.26em] text-brand-900 md:left-20 md:text-[25px]  ${
           introAlreadyPlayed ? "opacity-100" : "opacity-0"
         }`}
       >
-        <TextScramble text="Create, Learn, Explore" className="font-sans" autoScramble={false} />
+        <TextScramble text="Create, Learn, Explore" className="font-sans" />
       </h3>
 
       <h1
@@ -235,11 +235,11 @@ export function FreshReveal({
 
       <div className="absolute inset-0 z-[3] bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-      <div className="container relative z-10 flex w-full flex-col justify-end pb-8 pt-[70vh] md:pb-12">
+      <div className="container relative z-10 flex w-full flex-col justify-end pb-6 pt-[70vh] md:pb-12">
         <div className="flex w-full flex-col items-end self-end md:w-auto">
           <h3
             ref={subheadingRef}
-            className={`hero-h3 mb-8 max-w-2xl text-right text-lg text-black/70 md:text-2xl ${
+            className={`hero-h3 mb-8 max-w-2xl text-center md:text-right text-lg text-black/70 md:text-2xl ${
               introAlreadyPlayed ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -261,7 +261,7 @@ export function FreshReveal({
               onClick={() => {
                 smoothScrollToHash("#about");
               }}
-              className={`btn btn-secondary w-full border-zinc-700 bg-white/75 px-7 py-3 text-sm text-zinc-900 shadow-lg backdrop-blur-sm transition-[transform,box-shadow,background-color,border-color] duration-150 ease-out will-change-transform hover:-translate-y-0.5 hover:scale-[1.04] hover:border-zinc-900 hover:bg-white active:translate-y-0 active:scale-[0.99] sm:w-auto sm:px-10 sm:py-4 sm:text-base ${
+              className={`mb-8 md:mb-0 btn btn-secondary w-full border-zinc-700 bg-white/75 px-7 py-3 text-sm text-zinc-900 shadow-lg backdrop-blur-sm transition-[transform,box-shadow,background-color,border-color] duration-150 ease-out will-change-transform hover:-translate-y-0.5 hover:scale-[1.04] hover:border-zinc-900 hover:bg-white active:translate-y-0 active:scale-[0.99] sm:w-auto sm:px-10 sm:py-4 sm:text-base ${
                 introAlreadyPlayed ? "opacity-100" : "opacity-0"
               }`}
             >

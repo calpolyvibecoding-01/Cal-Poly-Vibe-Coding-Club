@@ -273,7 +273,7 @@ export function LeadershipSection() {
       </motion.div>
 
       {/* Mobile: vertical stack list */}
-      <div className="divide-y divide-zinc-200 md:hidden">
+      <div className="divide-y divide-zinc-200 md:hidden mb-20">
         {leadershipMembers.map((leader) => (
           <a
             key={leader.name}

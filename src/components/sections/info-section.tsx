@@ -74,7 +74,7 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
               <p className="section-kicker">What we believe</p>
               <h2 className="section-title">Our Mission</h2>
             </div>
-            <p className="section-intro max-w-md text-right">
+            <p className="section-intro max-w-md md:text-right">
               AI lets creativity turn into reality. If you can dream it, you can
               make it. No code required.
             </p>
