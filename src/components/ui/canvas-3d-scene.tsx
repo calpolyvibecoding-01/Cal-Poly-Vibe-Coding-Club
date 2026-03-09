@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
 
 interface Point3D {
   x: number;
@@ -15,10 +14,6 @@ const scenePalette = {
   light: "113, 153, 158",
   glow: "201, 219, 222",
 } as const;
-
-function clamp(value: number, min: number, max: number) {
-  return Math.min(Math.max(value, min), max);
-}
 
 function project(
   p: Point3D,
@@ -174,14 +169,12 @@ interface Canvas3DSceneProps {
   onReady?: () => void;
   onFrame?: () => void;
   isActive?: boolean;
-  className?: string;
 }
 
 export function Canvas3DScene({
   onReady,
   onFrame,
   isActive = true,
-  className,
 }: Canvas3DSceneProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
@@ -230,26 +223,18 @@ export function Canvas3DScene({
     }
 
     const resize = () => {
-      const rect = canvas.getBoundingClientRect();
-      if (rect.width === 0 || rect.height === 0) {
-        return;
-      }
-
       const dpr = Math.min(window.devicePixelRatio, 1.5);
-      canvas.width = Math.round(rect.width * dpr);
-      canvas.height = Math.round(rect.height * dpr);
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     resize();
 
-    const resizeObserver = new ResizeObserver(() => {
-      resize();
-    });
-    resizeObserver.observe(canvas);
-
     window.addEventListener("resize", resize);
     window.addEventListener("mousemove", handleMouseMove);
+
+    const fov = 500;
     const stars = starsRef.current;
     const knotPts = knotRef.current;
     const ring1 = ring1Ref.current;
@@ -281,8 +266,6 @@ export function Canvas3DScene({
 
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
-      const sceneScale = clamp(Math.min(w, h) / 800, 0.68, 1.28);
-      const fov = 500;
       const time = performance.now() * 0.001;
       const mx = mouseRef.current.x * 0.15;
       const my = mouseRef.current.y * 0.15;
@@ -295,12 +278,7 @@ export function Canvas3DScene({
       }
 
       for (const star of stars) {
-        let pt = {
-          x: star.x * sceneScale,
-          y: star.y * sceneScale,
-          z: star.z * sceneScale,
-        };
-        pt = rotateY(pt, time * 0.05 + mx);
+        let pt = rotateY(star, time * 0.05 + mx);
         pt = rotateX(pt, my * 0.3);
 
         const proj = project(pt, w, h, fov);
@@ -318,12 +296,7 @@ export function Canvas3DScene({
 
       let prevKnot: { x: number; y: number; scale: number } | null = null;
       for (let i = 0; i < knotPts.length; i += 1) {
-        let pt = {
-          x: knotPts[i].x * sceneScale,
-          y: knotPts[i].y * sceneScale,
-          z: knotPts[i].z * sceneScale,
-        };
-        pt = rotateY(pt, time * 0.3 + mx);
+        let pt = rotateY(knotPts[i], time * 0.3 + mx);
         pt = rotateX(pt, time * 0.2 + my);
         const proj = project(pt, w, h, fov);
 
@@ -341,12 +314,7 @@ export function Canvas3DScene({
       }
 
       if (prevKnot) {
-        let pt = {
-          x: knotPts[0].x * sceneScale,
-          y: knotPts[0].y * sceneScale,
-          z: knotPts[0].z * sceneScale,
-        };
-        pt = rotateY(pt, time * 0.3 + mx);
+        let pt = rotateY(knotPts[0], time * 0.3 + mx);
         pt = rotateX(pt, time * 0.2 + my);
         const proj = project(pt, w, h, fov);
 
@@ -358,15 +326,7 @@ export function Canvas3DScene({
         ctx.stroke();
       }
 
-      const gradientRadius = Math.max(160, Math.min(w, h) * 0.28);
-      const gradient = ctx.createRadialGradient(
-        w / 2,
-        h / 2,
-        0,
-        w / 2,
-        h / 2,
-        gradientRadius,
-      );
+      const gradient = ctx.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, 200);
       gradient.addColorStop(0, `rgba(${scenePalette.light}, 0.18)`);
       gradient.addColorStop(1, `rgba(${scenePalette.light}, 0)`);
       ctx.fillStyle = gradient;
@@ -382,12 +342,7 @@ export function Canvas3DScene({
         let prevRing: { x: number; y: number; scale: number } | null = null;
 
         for (let i = 0; i < ring.pts.length; i += 1) {
-          let pt = {
-            x: ring.pts[i].x * sceneScale,
-            y: ring.pts[i].y * sceneScale,
-            z: ring.pts[i].z * sceneScale,
-          };
-          pt = rotateX(pt, Math.PI / 2 + ring.rotOffset);
+          let pt = rotateX(ring.pts[i], Math.PI / 2 + ring.rotOffset);
           pt = rotateY(pt, time * 0.15 + mx);
           pt = rotateX(pt, time * 0.1 + my);
           const proj = project(pt, w, h, fov);
@@ -405,12 +360,7 @@ export function Canvas3DScene({
         }
 
         if (prevRing) {
-          let pt = {
-            x: ring.pts[0].x * sceneScale,
-            y: ring.pts[0].y * sceneScale,
-            z: ring.pts[0].z * sceneScale,
-          };
-          pt = rotateX(pt, Math.PI / 2 + ring.rotOffset);
+          let pt = rotateX(ring.pts[0], Math.PI / 2 + ring.rotOffset);
           pt = rotateY(pt, time * 0.15 + mx);
           pt = rotateX(pt, time * 0.1 + my);
           const proj = project(pt, w, h, fov);
@@ -424,22 +374,18 @@ export function Canvas3DScene({
         }
       }
 
-      const icoOffset: Point3D = {
-        x: -200 * sceneScale,
-        y: -100 * sceneScale,
-        z: 0,
-      };
+      const icoOffset: Point3D = { x: -200, y: -100, z: 0 };
       for (const [a, b] of ico.edges) {
         let pa = {
-          x: ico.verts[a].x * sceneScale + icoOffset.x,
-          y: ico.verts[a].y * sceneScale + icoOffset.y,
-          z: ico.verts[a].z * sceneScale + icoOffset.z,
+          x: ico.verts[a].x + icoOffset.x,
+          y: ico.verts[a].y + icoOffset.y,
+          z: ico.verts[a].z + icoOffset.z,
         };
 
         let pb = {
-          x: ico.verts[b].x * sceneScale + icoOffset.x,
-          y: ico.verts[b].y * sceneScale + icoOffset.y,
-          z: ico.verts[b].z * sceneScale + icoOffset.z,
+          x: ico.verts[b].x + icoOffset.x,
+          y: ico.verts[b].y + icoOffset.y,
+          z: ico.verts[b].z + icoOffset.z,
         };
 
         pa = rotateY(pa, time * 0.5 + mx);
@@ -464,22 +410,18 @@ export function Canvas3DScene({
         }
       }
 
-      const octOffset: Point3D = {
-        x: 200 * sceneScale,
-        y: 80 * sceneScale,
-        z: 0,
-      };
+      const octOffset: Point3D = { x: 200, y: 80, z: 0 };
       for (const [a, b] of oct.edges) {
         let pa = {
-          x: oct.verts[a].x * sceneScale + octOffset.x,
-          y: oct.verts[a].y * sceneScale + octOffset.y,
-          z: oct.verts[a].z * sceneScale + octOffset.z,
+          x: oct.verts[a].x + octOffset.x,
+          y: oct.verts[a].y + octOffset.y,
+          z: oct.verts[a].z + octOffset.z,
         };
 
         let pb = {
-          x: oct.verts[b].x * sceneScale + octOffset.x,
-          y: oct.verts[b].y * sceneScale + octOffset.y,
-          z: oct.verts[b].z * sceneScale + octOffset.z,
+          x: oct.verts[b].x + octOffset.x,
+          y: oct.verts[b].y + octOffset.y,
+          z: oct.verts[b].z + octOffset.z,
         };
 
         pa = rotateY(pa, time * 0.6 + mx);
@@ -506,9 +448,9 @@ export function Canvas3DScene({
 
       for (const v of ico.verts) {
         let pt = {
-          x: v.x * sceneScale + icoOffset.x,
-          y: v.y * sceneScale + icoOffset.y,
-          z: v.z * sceneScale + icoOffset.z,
+          x: v.x + icoOffset.x,
+          y: v.y + icoOffset.y,
+          z: v.z + icoOffset.z,
         };
 
         pt = rotateY(pt, time * 0.5 + mx);
@@ -526,9 +468,9 @@ export function Canvas3DScene({
 
       for (const v of oct.verts) {
         let pt = {
-          x: v.x * sceneScale + octOffset.x,
-          y: v.y * sceneScale + octOffset.y,
-          z: v.z * sceneScale + octOffset.z,
+          x: v.x + octOffset.x,
+          y: v.y + octOffset.y,
+          z: v.z + octOffset.z,
         };
 
         pt = rotateY(pt, time * 0.6 + mx);
@@ -552,7 +494,6 @@ export function Canvas3DScene({
 
     return () => {
       cancelAnimationFrame(animRef.current);
-      resizeObserver.disconnect();
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -561,7 +502,7 @@ export function Canvas3DScene({
   return (
     <canvas
       ref={canvasRef}
-      className={cn("absolute inset-0 h-full w-full", className)}
+      className="absolute inset-0 h-full w-full"
       style={{ display: "block" }}
     />
   );
