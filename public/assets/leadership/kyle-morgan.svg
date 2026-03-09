@@ -1,0 +1,26 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgKm" x1="110" y1="90" x2="700" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#194148"/>
+      <stop offset="1" stop-color="#102C31"/>
+    </linearGradient>
+    <clipPath id="topKm">
+      <rect x="0" y="0" width="800" height="500"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bgKm)"/>
+  <g clip-path="url(#topKm)">
+    <line x1="170" y1="180" x2="320" y2="180" stroke="#ADC5CA" stroke-width="10" stroke-linecap="round"/>
+    <line x1="320" y1="180" x2="320" y2="260" stroke="#ADC5CA" stroke-width="10" stroke-linecap="round"/>
+    <line x1="320" y1="260" x2="520" y2="260" stroke="#ADC5CA" stroke-width="10" stroke-linecap="round"/>
+    <line x1="520" y1="260" x2="520" y2="340" stroke="#ADC5CA" stroke-width="10" stroke-linecap="round"/>
+    <line x1="520" y1="340" x2="640" y2="340" stroke="#ADC5CA" stroke-width="10" stroke-linecap="round"/>
+
+    <rect x="245" y="130" width="90" height="90" stroke="#90B0B8" stroke-width="8"/>
+    <rect x="477" y="295" width="90" height="90" stroke="#90B0B8" stroke-width="8"/>
+
+    <circle cx="170" cy="180" r="8" fill="#C9D9DC"/>
+    <circle cx="640" cy="340" r="8" fill="#C9D9DC"/>
+  </g>
+</svg>

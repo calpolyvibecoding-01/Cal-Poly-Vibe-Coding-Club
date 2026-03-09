@@ -1,0 +1,19 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgCe" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 260) rotate(90) scale(620)">
+      <stop offset="0" stop-color="#194148"/>
+      <stop offset="1" stop-color="#102C31"/>
+    </radialGradient>
+    <clipPath id="topCe">
+      <rect x="0" y="0" width="800" height="500"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bgCe)"/>
+  <g clip-path="url(#topCe)">
+    <circle cx="320" cy="240" r="108" stroke="#ADC5CA" stroke-width="10"/>
+    <circle cx="500" cy="240" r="108" stroke="#90B0B8" stroke-width="10"/>
+    <line x1="220" y1="360" x2="600" y2="360" stroke="#71999E" stroke-width="8" stroke-linecap="round"/>
+    <rect x="354" y="300" width="92" height="92" stroke="#C9D9DC" stroke-width="8"/>
+  </g>
+</svg>

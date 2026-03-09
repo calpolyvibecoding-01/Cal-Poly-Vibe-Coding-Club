@@ -1,0 +1,20 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgSo" x1="140" y1="120" x2="660" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#194148"/>
+      <stop offset="1" stop-color="#102C31"/>
+    </linearGradient>
+    <clipPath id="topSo">
+      <rect x="0" y="0" width="800" height="500"/>
+    </clipPath>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#bgSo)"/>
+  <g clip-path="url(#topSo)">
+    <line x1="180" y1="140" x2="620" y2="140" stroke="#5D8087" stroke-width="8"/>
+    <line x1="180" y1="230" x2="620" y2="230" stroke="#5D8087" stroke-width="8"/>
+    <line x1="180" y1="320" x2="620" y2="320" stroke="#5D8087" stroke-width="8"/>
+    <line x1="180" y1="410" x2="620" y2="410" stroke="#5D8087" stroke-width="8"/>
+    <circle cx="400" cy="275" r="110" stroke="#ADC5CA" stroke-width="10"/>
+  </g>
+</svg>
