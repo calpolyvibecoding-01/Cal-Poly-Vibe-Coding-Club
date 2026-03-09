@@ -151,7 +151,7 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
           className="relative scroll-mt-24 overflow-hidden rounded-2xl border border-zinc-800/50 bg-zinc-950 p-8 shadow-2xl md:p-12"
         >
           <div className="relative z-10">
-            <h3 className="mb-8 text-3xl leading-tight tracking-tight text-white md:text-5xl">
+            <h3 className="mb-8 text-3xl leading-tight tracking-tight !text-zinc-100 md:text-5xl">
               Ready to learn a new skill?
             </h3>
 
