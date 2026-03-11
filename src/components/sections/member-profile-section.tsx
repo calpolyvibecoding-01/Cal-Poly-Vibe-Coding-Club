@@ -19,7 +19,7 @@ const standoutFeatures = [
   {
     number: "",
     title: "Looking For A Community Of Forward Thinkers",
-    copy: "Join a group of driven, future-focused people.",
+    copy: "Join a group of driven, ready to learn people.",
   },
 ] as const;
 
@@ -330,7 +330,7 @@ export function MemberProfileSection() {
           ))}
         </div>
 
-        <div className="mt-8 mb-10 ml-auto max-w-4xl text-right text-4xl font-semibold leading-[1.04] tracking-tight text-black/90 [text-wrap:balance] md:text-6xl">
+        <div className="mt-8 mb-10 ml-auto max-w-4xl text-right text-2xl font-semibold leading-[1.04] tracking-tight text-black/90 [text-wrap:balance] md:text-4xl">
           <span className="block">No matter your skill,</span>
           <span className="block">Vibe Coding Club is for you.</span>
         </div>
@@ -400,7 +400,7 @@ export function MemberProfileSection() {
         <div
           ref={endingTextRef}
           aria-label={`${ENDING_LINE_ONE} ${ENDING_LINE_TWO}`}
-          className="mt-8 mb-10 ml-auto max-w-4xl text-right text-4xl font-semibold leading-[1.04] tracking-tight text-black/90 [text-wrap:balance] md:text-6xl"
+          className="mt-8 mb-10 ml-auto max-w-4xl text-right text-2xl font-semibold leading-[1.04] tracking-tight text-black/90 [text-wrap:balance] md:text-4xl"
         >
           <span className="relative block">
             <span aria-hidden className="invisible">
