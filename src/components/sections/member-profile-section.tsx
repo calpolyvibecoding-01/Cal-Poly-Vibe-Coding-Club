@@ -308,9 +308,8 @@ export function MemberProfileSection() {
           {standoutFeatures.map((feature) => (
             <HoverCard
               key={feature.title}
-              className="pl-5 pr-2 py-2 md:min-h-[172px]"
+              className="rounded-2xl border border-zinc-200/80 bg-white p-6 md:min-h-[172px]"
             >
-              <div className="absolute inset-y-1 left-0 w-px bg-zinc-900/35" />
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
                 {feature.number}
               </p>
