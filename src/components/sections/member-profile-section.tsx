@@ -6,19 +6,19 @@ import { UserRound } from "lucide-react";
 
 const standoutFeatures = [
   {
-    number: "01",
-    title: "I Am New To AI",
-    copy: "I need a clear place to start.",
+    number: "",
+    title: "Curious About AI",
+    copy: "Looking for a clear place to start.",
   },
   {
-    number: "02",
-    title: "I Want To Stand Out",
-    copy: "I want projects that make my work noticeable.",
+    number: "",
+    title: "Want To Stand Out In Your Career",
+    copy: "Use AI projects to stand out to recruiters.",
   },
   {
-    number: "03",
-    title: "I Learn Better With Others",
-    copy: "I want a team that keeps me consistent.",
+    number: "",
+    title: "Looking For A Community Of Forward Thinkers",
+    copy: "Join a group of driven, future-focused people.",
   },
 ] as const;
 
