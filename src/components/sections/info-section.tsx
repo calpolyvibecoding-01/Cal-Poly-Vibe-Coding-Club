@@ -68,8 +68,8 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.64, margin: "0px 0px -22% 0px" }}
           className="section-header scroll-mt-24"
         >
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
@@ -88,8 +88,12 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
               className="absolute left-0 top-0 h-full bg-zinc-900"
               initial={{ width: "0%" }}
               whileInView={{ width: "100%" }}
-              transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              viewport={{ once: true }}
+              transition={{
+                duration: 1.2,
+                delay: 0.24,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+              viewport={{ once: true, amount: 0.72, margin: "0px 0px -22% 0px" }}
             />
           </div>
         </motion.div>
