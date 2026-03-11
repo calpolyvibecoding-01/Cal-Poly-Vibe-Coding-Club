@@ -69,7 +69,7 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.64, margin: "0px 0px -22% 0px" }}
+          viewport={{ once: true, amount: 0.3, margin: "0px 0px -22% 0px" }}
           className="section-header scroll-mt-24"
         >
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
