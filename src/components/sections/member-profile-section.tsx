@@ -2,23 +2,23 @@
 
 import { ReactNode } from "react";
 import { motion } from "motion/react";
-import { TextScramble } from "@/components/ui/text-scramble";
+import { UserRound } from "lucide-react";
 
 const standoutFeatures = [
   {
     number: "01",
-    title: "A new member to the world of AI ",
-    copy: "Learn fast through guided builds.",
+    title: "I Am New To AI",
+    copy: "I need a clear place to start.",
   },
   {
     number: "02",
-    title: "Looking to set themselves apart",
-    copy: "Ship portfolio work that gets noticed.",
+    title: "I Want To Stand Out",
+    copy: "I want projects that make my work noticeable.",
   },
   {
     number: "03",
-    title: "Striving for AI proffeicniy",
-    copy: "Grow with peers who keep you moving.",
+    title: "I Learn Better With Others",
+    copy: "I want a team that keeps me consistent.",
   },
 ] as const;
 
@@ -61,33 +61,18 @@ export function MemberProfileSection() {
       <div className="grid gap-5 lg:grid-cols-[0.95fr_1.35fr] lg:items-stretch">
         <HoverCard
           initial={{ opacity: 0, x: -16 }}
-          className="h-full rounded-2xl border border-zinc-200/80 bg-white/75 p-6 backdrop-blur-[1px] md:p-7"
+          className="h-full rounded-2xl border border-zinc-200/80 bg-white/75 p-6 backdrop-blur-[1px] md:p-7 lg:min-h-[590px]"
         >
           <div className="flex h-full flex-col">
             <h2 className="section-title text-4xl leading-[1.02] md:text-5xl">
-              Who is a vibe coding club member?
+              Does This Feel Like You?
             </h2>
 
-            <div className="mt-7 rounded-xl border border-brand-200/80 bg-white/80 p-4 md:p-5">
-              <div className="flex items-center gap-3">
-                <div className="grid h-14 w-14 place-items-center rounded-full border border-brand-300/80 bg-brand-100/55">
-                  <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-brand-700">
-                    ANON
-                  </span>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">
-                    Anonymous Profile
-                  </p>
-                  <p className="mt-1 text-lg tracking-tight text-black/85 md:text-xl">
-                    Future Builder
-                  </p>
-                </div>
-              </div>
-
-              <p className="mt-4 text-lg leading-snug text-black/70">
-                New to AI. Wants to build projects that stand out.
-              </p>
+            <div className="mt-8 flex flex-1 items-center justify-center">
+              <UserRound
+                className="h-[17rem] w-[17rem] text-brand-700/90 md:h-[20rem] md:w-[20rem]"
+                strokeWidth={1.35}
+              />
             </div>
           </div>
         </HoverCard>
