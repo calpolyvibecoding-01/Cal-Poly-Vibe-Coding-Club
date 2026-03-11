@@ -13,7 +13,7 @@ const standoutFeatures = [
   },
   {
     number: "",
-    title: "Looking To Stand Out In Your Career",
+    title: "Looking To Stand Out In Their Career",
     copy: "Use AI projects and knowlage to stand out to recruiters.",
   },
   {
