@@ -50,7 +50,7 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
       ref={sectionRef}
       className="relative overflow-hidden bg-neutral-0"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:64px_64px] opacity-100" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(13,29,48,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(13,29,48,0.02)_1px,transparent_1px)] bg-[size:64px_64px] opacity-100" />
 
       <motion.div
         style={{ y: orbY1 }}

@@ -185,26 +185,22 @@ export function FreshReveal({
       ref={sectionRef}
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-neutral-0 py-0"
     >
-      <h3
+      <p
         ref={taglineRef}
-        className={`hero-h3 absolute top-16 z-20 select-none text-[20px] tracking-[0.26em] !text-zinc-700  md:left-20 md:text-[25px]  ${
+        className={`absolute left-12 top-16 z-20 select-none text-[20px] tracking-[0.26em] text-brand-900 md:left-20 md:text-[25px]  ${
           introAlreadyPlayed ? "opacity-100" : "opacity-0"
         }`}
       >
-        <TextScramble text="Create, Learn, Explore" className="font-sans" />
-      </h3>
+        <TextScramble text="Create, Learn, Explore" className="font-sans" autoScramble={false} />
+      </p>
 
       <h1
         ref={headingRef}
-        className={`pointer-events-none absolute left-0 right-0 top-0 z-0 flex h-screen select-none items-center justify-center text-center text-5xl text-black md:text-9xl sm:text-wrap ${
+        className={`pointer-events-none absolute left-0 right-0 top-0 z-0 flex h-screen select-none items-center justify-center text-center text-6xl font-light leading-tight tracking-tight text-zinc-200 md:text-8xl ${
           introAlreadyPlayed ? "opacity-100" : "opacity-0"
         }`}
       >
-        <span className="hero-wordmark">
-          <span className="hero-wordmark-calpoly-coding">CAL POLY</span>{" "}
-          <span className="hero-wordmark-vibe">VIBE</span>{" "}
-          <span className="hero-wordmark-calpoly-coding">CODING</span>
-        </span>
+        Cal Poly Vibe Coding
       </h1>
 
       <div
@@ -233,20 +229,20 @@ export function FreshReveal({
         />
       </div>
 
-      <div className="absolute inset-0 z-[3] bg-[linear-gradient(rgba(13,29,48,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(13,29,48,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="absolute inset-0 z-[3] bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
-      <div className="container relative z-10 flex w-full flex-col justify-end pb-6 pt-[70vh] md:pb-12">
+      <div className="container relative z-10 flex w-full flex-col justify-end pb-8 pt-[70vh] md:pb-12">
         <div className="flex w-full flex-col items-end self-end md:w-auto">
-          <h3
+          <p
             ref={subheadingRef}
-            className={`hero-h3 mb-8 max-w-2xl text-center md:text-right text-lg !text-zinc-700 md:text-2xl ${
+            className={`mb-8 max-w-2xl text-right text-lg font-light leading-relaxed tracking-[0.01em] text-black/70 md:text-2xl ${
               introAlreadyPlayed ? "opacity-100" : "opacity-0"
             }`}
           >
             Make stunning, intentional projects - all without writing a single
             line of code.
-          </h3>
-          <div className="flex w-full flex-col items-stretch mt-4 gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-4 md:w-auto">
+          </p>
+          <div className="flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-end sm:gap-4 md:w-auto">
             <MagneticButton
               ref={buttonRef}
               onClick={onJoinSlackClick}
@@ -261,7 +257,7 @@ export function FreshReveal({
               onClick={() => {
                 smoothScrollToHash("#about");
               }}
-              className={`mb-8 md:mb-0 btn btn-secondary w-full border-zinc-700 bg-white/75 px-7 py-3 text-sm text-zinc-900 shadow-lg backdrop-blur-sm transition-[transform,box-shadow,background-color,border-color] duration-150 ease-out will-change-transform hover:-translate-y-0.5 hover:scale-[1.04] hover:border-zinc-900 hover:bg-white active:translate-y-0 active:scale-[0.99] sm:w-auto sm:px-10 sm:py-4 sm:text-base ${
+              className={`btn btn-secondary w-full border-zinc-700 bg-white/75 px-7 py-3 text-sm text-zinc-900 shadow-lg backdrop-blur-sm transition-[transform,box-shadow,background-color,border-color] duration-150 ease-out will-change-transform hover:-translate-y-0.5 hover:scale-[1.04] hover:border-zinc-900 hover:bg-white active:translate-y-0 active:scale-[0.99] sm:w-auto sm:px-10 sm:py-4 sm:text-base ${
                 introAlreadyPlayed ? "opacity-100" : "opacity-0"
               }`}
             >

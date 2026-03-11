@@ -84,9 +84,9 @@ function CardItem({
           background:
             "linear-gradient(145deg, rgb(18,48,54) 0%, rgb(8,26,32) 100%)",
           border: `1px solid rgba(173,197,202,${borderAlpha})`,
-          boxShadow: `0 ${depthShadow}px ${depthShadow * 2}px rgba(0,0,0,0.28), 0 ${
+          boxShadow: `0 ${depthShadow}px ${depthShadow * 2}px rgba(13,29,48,0.28), 0 ${
             depthShadow * 0.33
-          }px ${depthShadow * 0.83}px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.1)`,
+          }px ${depthShadow * 0.83}px rgba(13,29,48,0.18), inset 0 1px 0 rgba(255,255,255,0.1)`,
           overflow: "hidden",
           position: "relative",
         }}
@@ -335,7 +335,7 @@ export function ProjectsTeaser() {
             </p>
           </div>
 
-          <article className="relative mt-8 overflow-hidden rounded-2xl border border-brand-200/40 bg-[linear-gradient(145deg,rgb(18,48,54)_0%,rgb(8,26,32)_100%)] px-5 py-5 shadow-[0_16px_40px_rgba(0,0,0,0.26),inset_0_1px_0_rgba(255,255,255,0.1)]">
+          <article className="relative mt-8 overflow-hidden rounded-2xl border border-brand-200/40 bg-[linear-gradient(145deg,rgb(18,48,54)_0%,rgb(8,26,32)_100%)] px-5 py-5 shadow-[0_16px_40px_rgba(13,29,48,0.26),inset_0_1px_0_rgba(255,255,255,0.1)]">
             <div
               className="absolute inset-0 opacity-[0.06]"
               style={{

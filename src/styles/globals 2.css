@@ -1,16 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Unbounded:wght@400;500;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: "Unbounded", sans-serif;
-  --font-body: "Manrope", sans-serif;
-  --font-sans: var(--font-body);
   --surface: #ffffff;
   --surface-subtle: #f3f7f8;
-  --text-main: #0D1D30;
+  --text-main: #111111;
   --text-muted: #49686f;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
@@ -47,68 +42,33 @@
 
   body {
     @apply bg-neutral-0 font-sans text-neutral-900;
-    font-family: var(--font-body);
-    font-weight: 400;
-    line-height: 15px;
-    letter-spacing: -0.02em;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply text-black;
-    font-family: var(--font-display);
-  }
-
-  h1,
-  h1[class],
-  h2,
-  h2[class],
-  .heading,
-  .heading[class] {
-    font-weight: 500;
-    letter-spacing: -0.05em;
-  }
-
-  h3,
-  h3[class],
-  .subheading,
-  .subheading[class] {
-    @apply text-black;
-    font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.05em;
+    @apply tracking-tight text-black;
   }
 
   h1 {
-    @apply text-4xl md:text-6xl;
-    line-height: 1.08;
+    @apply text-4xl leading-tight md:text-6xl;
   }
 
   h2 {
-    @apply text-3xl md:text-5xl;
-    line-height: 1.08;
+    @apply text-3xl leading-tight md:text-5xl;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl;
-    line-height: 1.12;
+    @apply text-2xl leading-snug md:text-3xl;
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-xl leading-snug;
   }
 
-  p,
-  p[class],
-  li,
-  li[class] {
-    @apply text-base text-neutral-700;
-    font-family: var(--font-body);
-    font-weight: 600;
-    line-height: 15px;
-    letter-spacing: -0.02em;
+  p {
+    @apply text-base leading-relaxed text-neutral-700;
   }
 
   a,
@@ -136,11 +96,7 @@
   }
 
   .section-title {
-    @apply text-4xl text-neutral-950 md:text-6xl;
-    font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.05em;
-    line-height: 1.08;
+    @apply text-4xl leading-tight tracking-tight text-neutral-950 md:text-6xl;
   }
 
   .section-intro {
@@ -180,56 +136,8 @@
   }
 
   .type-display {
-    @apply text-4xl text-neutral-950 md:text-6xl;
-    font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.1em;
-    line-height: 1.02;
+    @apply text-4xl tracking-tight text-neutral-950 md:text-6xl;
   }
-
-  .hero-wordmark {
-    line-height: 0.98;
-    display: inline-block;
-    max-width: 100%;
-    white-space: normal;
-    text-wrap: balance;
-  }
-
-  @media (min-width: 1280px) {
-    .hero-wordmark {
-      white-space: nowrap;
-    }
-  }
-
-  .hero-wordmark-base {
-    font-family: var(--font-body);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .hero-wordmark-vibe {
-    font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.1em;
-    text-transform: uppercase;
-  }
-  
-  .hero-wordmark-calpoly-coding {
-    font-family: var(--font-body);
-    font-weight: 800;    
-    letter-spacing: -0.1em;
-  }
-
-  .hero-h3,
-  h3.hero-h3 {
-    @apply font-sans;
-    font-family: var(--font-body);
-    font-weight: 400;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    margin: 0;
-  }
-
 }
 
 @layer utilities {
