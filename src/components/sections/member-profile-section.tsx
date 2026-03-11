@@ -56,7 +56,6 @@ export function MemberProfileSection() {
   const endingLineOneRef = useRef<HTMLSpanElement>(null);
   const endingLineTwoRef = useRef<HTMLSpanElement>(null);
   const cardRefs = useRef<(HTMLElement | null)[]>([]);
-  const cardLineRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     if (window.matchMedia("(max-width: 1023px)").matches) {
@@ -74,9 +73,6 @@ export function MemberProfileSection() {
     const endingLineTwo = endingLineTwoRef.current;
     const cards = cardRefs.current.filter(
       (card): card is HTMLElement => card !== null,
-    );
-    const cardLines = cardLineRefs.current.filter(
-      (line): line is HTMLDivElement => line !== null,
     );
 
     if (
@@ -149,7 +145,6 @@ export function MemberProfileSection() {
       gsap.set(rightColumn, { autoAlpha: 0, y: 24 });
       gsap.set(icon, { y: 10, rotate: -6 });
       gsap.set(cards, { autoAlpha: 0, y: 20, scale: 0.97 });
-      gsap.set(cardLines, { scaleX: 0, transformOrigin: "left center" });
       gsap.set(endingText, { autoAlpha: 0, y: 26 });
       setTypedEnding(0);
       gsap.set(railFill, { scaleY: 0.06, transformOrigin: "top center" });
@@ -245,16 +240,6 @@ export function MemberProfileSection() {
       );
 
       timeline.to(
-        cardLines[0],
-        {
-          scaleX: 1,
-          duration: 0.1,
-          ease: "power2.out",
-        },
-        0.18,
-      );
-
-      timeline.to(
         cards[1],
         {
           autoAlpha: 1,
@@ -267,16 +252,6 @@ export function MemberProfileSection() {
       );
 
       timeline.to(
-        cardLines[1],
-        {
-          scaleX: 1,
-          duration: 0.11,
-          ease: "power2.out",
-        },
-        cardTwoBeat + 0.04,
-      );
-
-      timeline.to(
         cards[2],
         {
           autoAlpha: 1,
@@ -286,16 +261,6 @@ export function MemberProfileSection() {
           ease: "power2.out",
         },
         cardThreeBeat,
-      );
-
-      timeline.to(
-        cardLines[2],
-        {
-          scaleX: 1,
-          duration: 0.11,
-          ease: "power2.out",
-        },
-        cardThreeBeat + 0.04,
       );
 
       timeline.progress(0);
@@ -343,8 +308,9 @@ export function MemberProfileSection() {
           {standoutFeatures.map((feature) => (
             <HoverCard
               key={feature.title}
-              className="rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-[0_14px_30px_rgba(13,29,48,0.07)] md:min-h-[172px]"
+              className="pl-5 pr-2 py-2 md:min-h-[172px]"
             >
+              <div className="absolute inset-y-1 left-0 w-px bg-zinc-900/35" />
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
                 {feature.number}
               </p>
@@ -354,7 +320,6 @@ export function MemberProfileSection() {
               <p className="mt-3 text-lg leading-snug text-black/70">
                 {feature.copy}
               </p>
-              <div className="absolute bottom-0 left-0 h-[2px] w-full bg-zinc-900/85" />
             </HoverCard>
           ))}
         </div>
@@ -365,10 +330,10 @@ export function MemberProfileSection() {
         </div>
       </div>
 
-      <div className="hidden lg:block">
-        <div className="grid gap-5 lg:grid-cols-[0.95fr_1.35fr] lg:items-stretch">
-          <div ref={leftColumnRef}>
-            <HoverCard className="h-full rounded-2xl border border-zinc-200/80 bg-white/75 p-6 backdrop-blur-[1px] md:p-7">
+        <div className="hidden lg:block">
+          <div className="grid gap-5 lg:grid-cols-[0.95fr_1.35fr] lg:items-stretch">
+            <div ref={leftColumnRef}>
+            <HoverCard className="h-full p-2 md:p-3">
               <div className="flex h-full flex-col">
                 <h2 className="section-title text-4xl leading-[1.02] md:text-5xl">
                   Does This Feel Like You?
@@ -406,7 +371,7 @@ export function MemberProfileSection() {
                   cardRef={(element) => {
                     cardRefs.current[index] = element;
                   }}
-                  className="rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-[0_14px_30px_rgba(13,29,48,0.07)] md:min-h-[172px]"
+                  className="rounded-2xl border border-zinc-200/80 bg-white p-6 md:min-h-[172px]"
                 >
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
                     {feature.number}
@@ -417,12 +382,6 @@ export function MemberProfileSection() {
                   <p className="mt-3 text-lg leading-snug text-black/70">
                     {feature.copy}
                   </p>
-                  <div
-                    ref={(element) => {
-                      cardLineRefs.current[index] = element;
-                    }}
-                    className="absolute bottom-0 left-0 h-[2px] w-full bg-zinc-900/85"
-                  />
                 </HoverCard>
               ))}
             </div>

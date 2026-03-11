@@ -53,14 +53,6 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
     >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(13,29,48,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(13,29,48,0.02)_1px,transparent_1px)] bg-[size:64px_64px] opacity-100" />
 
-      <motion.div
-        style={{ y: orbY1 }}
-        className="pointer-events-none absolute right-10 top-20 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"
-      />
-      <motion.div
-        style={{ y: orbY2 }}
-        className="pointer-events-none absolute bottom-40 left-10 h-80 w-80 rounded-full bg-brand-300/35 blur-3xl"
-      />
 
       <div className="container relative z-10 pb-14 pt-0 md:pb-20">
         <MemberProfileSection />
