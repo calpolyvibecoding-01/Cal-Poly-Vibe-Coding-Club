@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { activities, siteConfig } from "@/lib/constants";
 import { LeadershipSection } from "@/components/sections/leadership-section";
+import { MemberProfileSection } from "@/components/sections/member-profile-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { ProjectsTeaser } from "@/components/sections/projects-teaser";
 import { Marquee } from "@/components/ui/marquee";
@@ -62,6 +63,8 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
       />
 
       <div className="container relative z-10 pb-14 pt-0 md:pb-20">
+        <MemberProfileSection />
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
