@@ -23,7 +23,7 @@ const standoutFeatures = [
   },
 ] as const;
 
-const ENDING_LINE_ONE = "If so,";
+const ENDING_LINE_ONE = "No matter your skill,";
 const ENDING_LINE_TWO = "Vibe Coding Club is for you.";
 
 interface HoverCardProps {
@@ -72,7 +72,7 @@ export function MemberProfileSection() {
     const endingLineOne = endingLineOneRef.current;
     const endingLineTwo = endingLineTwoRef.current;
     const cards = cardRefs.current.filter(
-      (card): card is HTMLElement => card !== null,
+      (card): card is HTMLElement => card !== null
     );
 
     if (
@@ -107,7 +107,10 @@ export function MemberProfileSection() {
       const setTypedEnding = (typedChars: number) => {
         const clampedChars = gsap.utils.clamp(0, endingCharsTotal, typedChars);
         const firstLineChars = Math.min(clampedChars, ENDING_LINE_ONE.length);
-        const secondLineChars = Math.max(0, clampedChars - ENDING_LINE_ONE.length);
+        const secondLineChars = Math.max(
+          0,
+          clampedChars - ENDING_LINE_ONE.length
+        );
 
         endingLineOne.textContent = ENDING_LINE_ONE.slice(0, firstLineChars);
         endingLineTwo.textContent = ENDING_LINE_TWO.slice(0, secondLineChars);
@@ -120,7 +123,8 @@ export function MemberProfileSection() {
 
         endingStarted = true;
 
-        gsap.timeline()
+        gsap
+          .timeline()
           .to(endingText, {
             autoAlpha: 1,
             y: 0,
@@ -137,7 +141,7 @@ export function MemberProfileSection() {
                 setTypedEnding(Math.round(endingState.chars));
               },
             },
-            "<+=0.02",
+            "<+=0.02"
           );
       };
 
@@ -154,9 +158,10 @@ export function MemberProfileSection() {
         const railProgress = gsap.utils.clamp(
           0,
           1,
-          (progress - railStartAt) / (railEndAt - railStartAt),
+          (progress - railStartAt) / (railEndAt - railStartAt)
         );
-        const dotTopPercent = railStartPercent + railRangePercent * railProgress;
+        const dotTopPercent =
+          railStartPercent + railRangePercent * railProgress;
         gsap.set(railFill, { scaleY: 0.06 + railProgress * 0.94 });
         gsap.set(railDot, { top: `${dotTopPercent}%` });
       };
@@ -171,7 +176,7 @@ export function MemberProfileSection() {
           duration: 0.16,
           ease: "power2.out",
         },
-        0.02,
+        0.02
       );
 
       timeline.to(
@@ -182,7 +187,7 @@ export function MemberProfileSection() {
           duration: 0.2,
           ease: "power2.out",
         },
-        0.06,
+        0.06
       );
 
       timeline.to(
@@ -192,7 +197,7 @@ export function MemberProfileSection() {
           duration: 0.86,
           ease: "none",
         },
-        0.1,
+        0.1
       );
 
       timeline.to(
@@ -202,7 +207,7 @@ export function MemberProfileSection() {
           duration: 0.86,
           ease: "none",
         },
-        0.1,
+        0.1
       );
 
       timeline.to(
@@ -213,7 +218,7 @@ export function MemberProfileSection() {
           duration: 0.5,
           ease: "none",
         },
-        0.1,
+        0.1
       );
 
       timeline.to(
@@ -224,7 +229,7 @@ export function MemberProfileSection() {
           duration: 0.38,
           ease: "none",
         },
-        0.6,
+        0.6
       );
 
       timeline.to(
@@ -236,7 +241,7 @@ export function MemberProfileSection() {
           duration: 0.14,
           ease: "power2.out",
         },
-        0.14,
+        0.14
       );
 
       timeline.to(
@@ -248,7 +253,7 @@ export function MemberProfileSection() {
           duration: 0.14,
           ease: "power2.out",
         },
-        cardTwoBeat,
+        cardTwoBeat
       );
 
       timeline.to(
@@ -260,7 +265,7 @@ export function MemberProfileSection() {
           duration: 0.14,
           ease: "power2.out",
         },
-        cardThreeBeat,
+        cardThreeBeat
       );
 
       timeline.progress(0);
@@ -276,7 +281,7 @@ export function MemberProfileSection() {
           const storyProgress = gsap.utils.clamp(
             0,
             1,
-            self.progress * storySpeedMultiplier,
+            self.progress * storySpeedMultiplier
           );
           heldStoryProgress = Math.max(heldStoryProgress, storyProgress);
           timeline.progress(heldStoryProgress);
@@ -302,7 +307,9 @@ export function MemberProfileSection() {
       className="relative mb-16 scroll-mt-24 overflow-hidden pt-14 md:mb-20 md:pt-20"
     >
       <div className="lg:hidden">
-        <h2 className="section-title text-4xl leading-[1.02]">Does This Feel Like You?</h2>
+        <h2 className="section-title text-4xl leading-[1.02]">
+          What Does a CPVC Member Look Like?
+        </h2>
 
         <div className="mt-6 grid gap-4">
           {standoutFeatures.map((feature) => (
@@ -324,18 +331,18 @@ export function MemberProfileSection() {
         </div>
 
         <div className="mt-8 mb-10 ml-auto max-w-4xl text-right text-4xl font-semibold leading-[1.04] tracking-tight text-black/90 [text-wrap:balance] md:text-6xl">
-          <span className="block">If so,</span>
+          <span className="block">No matter your skill,</span>
           <span className="block">Vibe Coding Club is for you.</span>
         </div>
       </div>
 
-        <div className="hidden lg:block">
-          <div className="grid gap-5 lg:grid-cols-[0.95fr_1.35fr] lg:items-stretch">
-            <div ref={leftColumnRef}>
+      <div className="hidden lg:block">
+        <div className="grid gap-5 lg:grid-cols-[0.95fr_1.35fr] lg:items-stretch">
+          <div ref={leftColumnRef}>
             <HoverCard className="h-full p-2 md:p-3">
               <div className="flex h-full flex-col">
                 <h2 className="section-title text-4xl leading-[1.02] md:text-5xl">
-                  Does This Feel Like You?
+                  What Does a CPVC Member Look Like?
                 </h2>
 
                 <div className="mt-8 flex flex-1 items-center justify-center">
@@ -351,7 +358,10 @@ export function MemberProfileSection() {
           </div>
 
           <div ref={rightColumnRef} className="relative pl-8 md:pl-10">
-            <div aria-hidden className="absolute bottom-2 left-1 top-2 w-px bg-zinc-200/90" />
+            <div
+              aria-hidden
+              className="absolute bottom-2 left-1 top-2 w-px bg-zinc-200/90"
+            />
             <div
               aria-hidden
               ref={railFillRef}
