@@ -116,7 +116,7 @@ export function HomePage() {
           <div className="flex flex-col items-center gap-5">
             <div ref={logoRef} className="flex items-center gap-3 opacity-0">
               <Image
-                src="/assets/Logo-transparent.png"
+                src="/assets/CPVC_Full_Logo.png"
                 alt={siteConfig.name}
                 width={190}
                 height={53}

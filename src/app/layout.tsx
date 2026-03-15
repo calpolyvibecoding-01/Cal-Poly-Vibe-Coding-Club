@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "A community of developers building real projects, learning new skills, and growing together.",
   icons: {
-    icon: "/assets/short-logo.png",
+    icon: "/assets/CPVC_Diamond.png",
   },
 };
 

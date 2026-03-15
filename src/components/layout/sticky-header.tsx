@@ -254,7 +254,7 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
             aria-label="Go to about section"
           >
             <Image
-              src="/assets/Logo-transparent.png"
+              src="/assets/CPVC_Full_Logo.png"
               alt={siteConfig.name}
               width={160}
               height={45}

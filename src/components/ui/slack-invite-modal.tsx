@@ -67,7 +67,7 @@ function VibeCodingLogo({ className = "h-5 w-5" }: { className?: string }) {
   return (
     <span aria-hidden className={`relative block overflow-hidden ${className}`}>
       <Image
-        src="/assets/Logo-transparent.png"
+        src="/assets/CPVC_Full_Logo.png"
         alt=""
         fill
         sizes="20px"
