@@ -51,7 +51,13 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
       ref={sectionRef}
       className="relative overflow-hidden bg-neutral-0"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(13,29,48,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(13,29,48,0.02)_1px,transparent_1px)] bg-[size:64px_64px] opacity-100" />
+      <div
+        className="absolute inset-0 bg-[size:64px_64px] opacity-100"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(var(--color-dark-rgb),0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--color-dark-rgb),0.02) 1px, transparent 1px)",
+        }}
+      />
 
 
       <div className="container relative z-10 pb-14 pt-0 md:pb-20">

@@ -1,20 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Unbounded:wght@400;500;600;700&display=swap");
+@import "./styles.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --font-display: "Unbounded", sans-serif;
-  --font-body: "Manrope", sans-serif;
-  --font-sans: var(--font-body);
-  --surface: #ffffff;
-  --surface-subtle: #f3f7f8;
-  --text-main: #0D1D30;
-  --text-muted: #49686f;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-}
 
 @keyframes leader-card-float {
   0%,

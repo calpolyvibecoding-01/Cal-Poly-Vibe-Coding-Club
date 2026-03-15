@@ -9,10 +9,10 @@ interface Point3D {
 }
 
 const scenePalette = {
-  dark: "25, 65, 72",
-  mid: "73, 104, 111",
-  light: "113, 153, 158",
-  glow: "201, 219, 222",
+  dark: "13, 29, 48",
+  mid: "57, 164, 157",
+  light: "109, 225, 215",
+  glow: "242, 252, 251",
 } as const;
 
 function project(

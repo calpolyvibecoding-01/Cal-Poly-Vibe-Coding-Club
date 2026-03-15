@@ -107,7 +107,7 @@ export function WireframeBg() {
 
           if (dist < connectionDistance) {
             const alpha = (1 - dist / connectionDistance) * 0.12;
-            ctx.strokeStyle = `rgba(100, 100, 120, ${alpha})`;
+            ctx.strokeStyle = `rgba(13, 29, 48, ${alpha})`;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -122,7 +122,7 @@ export function WireframeBg() {
         const dist = Math.sqrt(dx * dx + dy * dy);
         const glow = dist < mouseDistance ? (1 - dist / mouseDistance) * 0.4 : 0;
 
-        ctx.fillStyle = `rgba(100, 100, 140, ${0.15 + glow})`;
+        ctx.fillStyle = `rgba(109, 225, 215, ${0.15 + glow})`;
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.r + glow * 2, 0, Math.PI * 2);
         ctx.fill();

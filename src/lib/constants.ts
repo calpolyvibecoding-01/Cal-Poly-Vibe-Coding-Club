@@ -24,7 +24,7 @@ export const activities = [
     description:
       "Hands-on sessions covering every aspect of coding, and utilizing AI.",
     schedule: "Click 'Join Us' to give your say on meeting timing.",
-    glowColor: [113, 153, 158] as [number, number, number],
+    glowColor: [109, 225, 215] as [number, number, number],
     icon: "code2" as const,
   },
   {
@@ -32,21 +32,21 @@ export const activities = [
     description:
       "Themed hackathons to build real products, experiment with new technologies, and push AI skills to the limit.",
     schedule: "First hackathon in development, date will be released soon!",
-    glowColor: [73, 104, 111] as [number, number, number],
+    glowColor: [84, 107, 133] as [number, number, number],
     icon: "sparkles" as const,
   },
   {
     title: "Hands on Workshops",
     description:
       "Collaborate on meaningful open source projects and contribute to tools used by thousands of developers worldwide.",
-    glowColor: [93, 128, 135] as [number, number, number],
+    glowColor: [57, 164, 157] as [number, number, number],
     icon: "users" as const,
   },
   {
     title: "Tech Talks",
     description:
       "Industry professionals and senior members share insights on career development, system design, and navigating the tech landscape.",
-    glowColor: [25, 65, 72] as [number, number, number],
+    glowColor: [13, 29, 48] as [number, number, number],
     icon: "lightbulb" as const,
   },
 ] as const;
@@ -69,7 +69,7 @@ export const leadershipMembers = [
     image: "/assets/leadership/kyle-stefan.svg",
     accent: "from-brand-900 to-brand-500",
     hoverHueShift: -6,
-    hoverGlow: "rgba(86, 181, 175, 0.42)",
+    hoverGlow: "rgba(109, 225, 215, 0.34)",
     linkedin: "https://www.linkedin.com/in/kyle-stefan/",
   },
   {
@@ -79,7 +79,7 @@ export const leadershipMembers = [
     image: "/assets/leadership/luke-vieira.svg",
     accent: "from-brand-700 to-brand-400",
     hoverHueShift: 8,
-    hoverGlow: "rgba(97, 191, 174, 0.4)",
+    hoverGlow: "rgba(109, 225, 215, 0.3)",
     linkedin: "https://www.linkedin.com/in/vieiraluke/",
   },
   {
@@ -89,7 +89,7 @@ export const leadershipMembers = [
     image: "/assets/leadership/miles-clarke.svg",
     accent: "from-brand-800 to-brand-500",
     hoverHueShift: 14,
-    hoverGlow: "rgba(107, 194, 167, 0.4)",
+    hoverGlow: "rgba(109, 225, 215, 0.31)",
     linkedin: "https://www.linkedin.com/in/milesclarke2/",
   },
   {
@@ -99,7 +99,7 @@ export const leadershipMembers = [
     image: "/assets/leadership/sam-otto.svg",
     accent: "from-brand-700 to-brand-400",
     hoverHueShift: -12,
-    hoverGlow: "rgba(71, 173, 181, 0.4)",
+    hoverGlow: "rgba(109, 225, 215, 0.28)",
     linkedin: "https://www.linkedin.com/in/sotto27/",
   },
   {
@@ -109,7 +109,7 @@ export const leadershipMembers = [
     image: "/assets/leadership/caitlyn-eggert.svg",
     accent: "from-brand-600 to-brand-300",
     hoverHueShift: 22,
-    hoverGlow: "rgba(119, 203, 170, 0.38)",
+    hoverGlow: "rgba(109, 225, 215, 0.32)",
     linkedin: "https://www.linkedin.com/in/caitlyneggert/",
   },
   {
@@ -119,7 +119,7 @@ export const leadershipMembers = [
     image: "/assets/leadership/kyle-morgan.svg",
     accent: "from-brand-900 to-brand-600",
     hoverHueShift: -9,
-    hoverGlow: "rgba(78, 170, 183, 0.4)",
+    hoverGlow: "rgba(109, 225, 215, 0.3)",
     linkedin: "https://www.linkedin.com/in/kyle-morgan0/",
   },
   {
@@ -129,7 +129,7 @@ export const leadershipMembers = [
     image: "/assets/leadership/cruz-landers.svg",
     accent: "from-brand-700 to-brand-500",
     hoverHueShift: 12,
-    hoverGlow: "rgba(102, 186, 172, 0.42)",
+    hoverGlow: "rgba(109, 225, 215, 0.33)",
     linkedin: "https://www.linkedin.com/in/cruz-landers-55a577294/",
   },
   {
@@ -139,7 +139,7 @@ export const leadershipMembers = [
     image: "/assets/leadership/lucas-winger.svg",
     accent: "from-brand-800 to-brand-400",
     hoverHueShift: 26,
-    hoverGlow: "rgba(129, 205, 167, 0.38)",
+    hoverGlow: "rgba(109, 225, 215, 0.3)",
     linkedin: "https://www.linkedin.com/in/lucaswinger/",
   },
 ] as const;

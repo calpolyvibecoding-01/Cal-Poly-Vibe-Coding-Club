@@ -1,0 +1,58 @@
+:root {
+  --font-display: "Unbounded", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-sans: var(--font-body);
+
+  /* Core palette */
+  --color-dark: #0d1d30;
+  --color-light: #ffffff;
+  --color-accent: #6de1d7;
+
+  /* Golden-ratio target usage: dark / light / accent */
+  --color-ratio-dark: 61.8%;
+  --color-ratio-light: 30.2%;
+  --color-ratio-accent: 8%;
+
+  /* RGB channels for alpha-aware Tailwind utilities */
+  --color-dark-rgb: 13 29 48;
+  --color-light-rgb: 255 255 255;
+  --color-accent-rgb: 109 225 215;
+
+  /* Neutral ramp (dark-driven, for structure and typography) */
+  --color-neutral-0-rgb: 255 255 255;
+  --color-neutral-50-rgb: 245 248 251;
+  --color-neutral-100-rgb: 232 238 244;
+  --color-neutral-200-rgb: 213 223 233;
+  --color-neutral-300-rgb: 185 199 214;
+  --color-neutral-400-rgb: 152 171 191;
+  --color-neutral-500-rgb: 118 140 164;
+  --color-neutral-600-rgb: 84 107 133;
+  --color-neutral-700-rgb: 58 79 104;
+  --color-neutral-800-rgb: 38 56 79;
+  --color-neutral-900-rgb: 24 39 61;
+  --color-neutral-950-rgb: 13 29 48;
+
+  /* Accent ramp (used sparingly for highlights and signals) */
+  --color-brand-50-rgb: 242 252 251;
+  --color-brand-100-rgb: 226 249 247;
+  --color-brand-200-rgb: 201 244 240;
+  --color-brand-300-rgb: 173 237 232;
+  --color-brand-400-rgb: 141 231 224;
+  --color-brand-500-rgb: 109 225 215;
+  --color-brand-600-rgb: 79 195 186;
+  --color-brand-700-rgb: 57 164 157;
+  --color-brand-800-rgb: 39 131 126;
+  --color-brand-900-rgb: 28 101 97;
+  --color-brand-950-rgb: 16 63 61;
+
+  /* Semantic tokens */
+  --surface: var(--color-light);
+  --surface-subtle: rgb(var(--color-neutral-50-rgb));
+  --surface-strong: rgb(var(--color-neutral-950-rgb));
+  --text-main: rgb(var(--color-neutral-950-rgb));
+  --text-muted: rgb(var(--color-neutral-700-rgb));
+  --accent-main: var(--color-accent);
+
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}

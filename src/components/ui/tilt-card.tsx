@@ -13,7 +13,7 @@ interface TiltCardProps {
 export function TiltCard({
   children,
   className,
-  glowColor = [113, 153, 158],
+  glowColor = [109, 225, 215],
 }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0.5);
@@ -84,7 +84,13 @@ export function TiltCard({
         className="relative h-full overflow-hidden rounded-3xl border border-zinc-200/60 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-shadow duration-500 group-hover:shadow-2xl"
         style={{ transform: "translateZ(20px)" }}
       >
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(13,29,48,1)_1px,transparent_1px),linear-gradient(90deg,rgba(13,29,48,1)_1px,transparent_1px)] bg-[size:24px_24px] opacity-0 transition-opacity duration-700 group-hover:opacity-[0.03]" />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[size:24px_24px] opacity-0 transition-opacity duration-700 group-hover:opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(var(--color-dark-rgb),1) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--color-dark-rgb),1) 1px, transparent 1px)",
+          }}
+        />
         {children}
       </div>
     </motion.div>

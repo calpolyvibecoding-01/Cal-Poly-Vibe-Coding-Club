@@ -219,7 +219,7 @@ function OpenRoleCard({
             }
       }
       viewport={disableAnimation ? undefined : { once: true }}
-      className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/70 p-5 backdrop-blur-[2px] transition-[border-color,box-shadow,background-color] duration-300 hover:border-zinc-300 hover:bg-white hover:shadow-[0_14px_32px_-28px_rgba(13,29,48,0.65)]"
+      className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white/70 p-5 backdrop-blur-[2px] transition-[border-color,box-shadow,background-color] duration-300 hover:border-zinc-300 hover:bg-white hover:shadow-[0_14px_32px_-28px_rgba(var(--color-dark-rgb),0.65)]"
     >
       <div className="mb-8 flex items-center justify-between">
         <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">

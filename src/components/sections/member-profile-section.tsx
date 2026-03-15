@@ -370,7 +370,8 @@ export function MemberProfileSection() {
             <div
               aria-hidden
               ref={railDotRef}
-              className="absolute left-1 z-10 h-4 w-4 -translate-x-1/2 rounded-full border border-zinc-900/20 bg-zinc-900 shadow-[0_0_0_6px_rgba(13,29,48,0.12)]"
+              className="absolute left-1 z-10 h-4 w-4 -translate-x-1/2 rounded-full border border-zinc-900/20 bg-zinc-900"
+              style={{ boxShadow: "0 0 0 6px rgba(var(--color-dark-rgb), 0.12)" }}
             />
 
             <div className="grid gap-4">

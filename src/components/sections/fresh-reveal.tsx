@@ -213,7 +213,13 @@ export function FreshReveal({
           showPoster ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(113,153,158,0.24),rgba(243,247,248,0.96)_55%)]" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 45%, rgba(var(--color-accent-rgb), 0.2), rgba(var(--color-light-rgb), 0.96) 55%)",
+          }}
+        />
         <div className="absolute left-1/2 top-1/2 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-200/80" />
         <div className="absolute left-1/2 top-1/2 h-[19rem] w-[19rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand-300/80" />
         <div className="absolute right-[14%] top-[22%] h-32 w-32 rounded-full border border-brand-300/80" />
@@ -233,7 +239,13 @@ export function FreshReveal({
         />
       </div>
 
-      <div className="absolute inset-0 z-[3] bg-[linear-gradient(rgba(13,29,48,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(13,29,48,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div
+        className="absolute inset-0 z-[3] bg-[size:64px_64px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(var(--color-dark-rgb),0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--color-dark-rgb),0.02) 1px, transparent 1px)",
+        }}
+      />
 
       <div className="container relative z-10 flex w-full flex-col justify-end pb-6 pt-[70vh] md:pb-12">
         <div className="flex w-full flex-col items-end self-end md:w-auto">

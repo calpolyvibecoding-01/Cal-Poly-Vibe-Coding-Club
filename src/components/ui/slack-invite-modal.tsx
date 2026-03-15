@@ -15,27 +15,27 @@ interface SlackInviteModalProps {
 
 const previewMessages = [
   {
-    accent: "#36C5F0",
+    accent: "rgba(var(--color-accent-rgb), 0.9)",
     lines: [84, 62, 46],
   },
   {
-    accent: "#2EB67D",
+    accent: "rgba(var(--color-accent-rgb), 0.8)",
     lines: [72, 56],
   },
   {
-    accent: "#ECB22E",
+    accent: "rgba(var(--color-accent-rgb), 0.65)",
     lines: [78, 64, 58],
   },
   {
-    accent: "#E01E5A",
+    accent: "rgba(var(--color-dark-rgb), 0.58)",
     lines: [68, 52],
   },
   {
-    accent: "#611F69",
+    accent: "rgba(var(--color-dark-rgb), 0.65)",
     lines: [86, 58, 40],
   },
   {
-    accent: "#1264A3",
+    accent: "rgba(var(--color-accent-rgb), 0.72)",
     lines: [70, 64],
   },
 ] as const;
@@ -131,7 +131,7 @@ export function SlackInviteModal({
             role="dialog"
             aria-modal="true"
             aria-label="Join our Slack community"
-            className="relative my-2 w-full max-w-6xl max-h-[calc(100svh-1.5rem)] overflow-x-hidden overflow-y-auto rounded-2xl border border-brand-300 bg-white p-4 shadow-[0_40px_120px_rgba(25,65,72,0.22)] sm:p-5 md:my-0 md:max-h-[min(920px,calc(100svh-4rem))] md:p-8"
+            className="relative my-2 w-full max-w-6xl max-h-[calc(100svh-1.5rem)] overflow-x-hidden overflow-y-auto rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_40px_120px_rgba(var(--color-dark-rgb),0.22)] sm:p-5 md:my-0 md:max-h-[min(920px,calc(100svh-4rem))] md:p-8"
             initial={{ opacity: 0, y: 26, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.985 }}
@@ -140,7 +140,7 @@ export function SlackInviteModal({
           >
             <div
               aria-hidden
-              className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-brand-900 via-brand-700 to-brand-500"
+              className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-zinc-950 via-zinc-900 to-brand-500"
             />
 
             <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -166,7 +166,7 @@ export function SlackInviteModal({
                   <MagneticButton
                     strength={0.1}
                     onClick={() => openExternalLink(slackInviteUrl)}
-                    className="btn btn-primary btn-jiggle group w-full justify-center gap-2 border border-brand-800 bg-gradient-to-r from-brand-800 to-brand-600 shadow-md shadow-brand-900/20 hover:from-brand-900 hover:to-brand-700 sm:w-auto"
+                    className="btn btn-primary btn-jiggle group w-full justify-center gap-2 border border-zinc-900 shadow-md shadow-zinc-950/20 sm:w-auto"
                   >
                     <SlackMark className="h-4 w-4" />
                     Join Slack
@@ -175,7 +175,7 @@ export function SlackInviteModal({
                   <MagneticButton
                     strength={0.04}
                     onClick={() => openExternalLink(formInviteUrl)}
-                    className="btn btn-primary btn-jiggle group w-full justify-center gap-2 border border-brand-800 bg-gradient-to-r from-brand-800 to-brand-600 shadow-md shadow-brand-900/20 hover:from-brand-900 hover:to-brand-700 sm:w-auto"
+                    className="btn btn-primary btn-jiggle group w-full justify-center gap-2 border border-zinc-900 shadow-md shadow-zinc-950/20 sm:w-auto"
                   >
                     Fill out the Interest Form
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -207,7 +207,7 @@ export function SlackInviteModal({
                       </div>
                     </div>
 
-                    <div className="flex-1 bg-[#f8f8f8] p-2.5 sm:p-3">
+                    <div className="flex-1 bg-neutral-50 p-2.5 sm:p-3">
                       <div className="mb-3 flex items-center justify-between">
                         <div className="h-2.5 w-20 rounded bg-brand-500/30" />
                         <div className="h-2 w-8 rounded bg-zinc-300" />
