@@ -249,17 +249,18 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
         >
           <button
             type="button"
-            className="flex items-center"
+            className="flex shrink-0 items-center"
             onClick={() => smoothScrollToHash("#about")}
             aria-label="Go to about section"
           >
             <Image
-              src="/assets/CPVC_Full_Logo.png"
+              src="/assets/CPVC_Full_Cropped.png"
               alt={siteConfig.name}
-              width={160}
-              height={45}
-              className="h-auto w-[120px] md:w-[150px]"
-              sizes="(max-width: 768px) 120px, 150px"
+              width={743}
+              height={214}
+              className="h-auto w-[112px] sm:w-[126px] md:w-[148px] lg:w-[158px]"
+              sizes="(max-width: 640px) 112px, (max-width: 768px) 126px, (max-width: 1280px) 148px, 158px"
+              unoptimized
               priority
             />
           </button>
