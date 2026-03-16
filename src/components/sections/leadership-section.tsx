@@ -178,7 +178,7 @@ function LeaderCard({
             <h4 className="mb-0 text-sm tracking-tight text-white sm:mb-0.5 sm:text-base">
               {leader.name}
             </h4>
-            <p className="hidden max-h-0 overflow-hidden text-[11px] leading-snug text-zinc-400 opacity-0 transition-all duration-500 group-hover:max-h-8 group-hover:opacity-100 sm:block">
+            <p className="hidden max-h-0 overflow-hidden !text-gray-200 text-[11px] leading-snug opacity-0 transition-all duration-500 group-hover:max-h-8 group-hover:opacity-100 sm:block">
               {leader.tagline}
             </p>
           </div>
