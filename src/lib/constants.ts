@@ -65,7 +65,7 @@ export const leadershipMembers = [
   {
     name: "Kyle Stefan",
     role: "President",
-    tagline: "Leads club strategy and sets the vision each term.",
+    tagline: "Club Vision Lead",
     image: "/assets/leadership/kyle-stefan.svg",
     accent: "from-brand-900 to-brand-500",
     hoverHueShift: -6,
@@ -75,7 +75,7 @@ export const leadershipMembers = [
   {
     name: "Luke Vieira",
     role: "Vice President",
-    tagline: "Supports operations and keeps key initiatives on track.",
+    tagline: "Operations Support Lead",
     image: "/assets/leadership/luke-vieira.svg",
     accent: "from-brand-700 to-brand-400",
     hoverHueShift: 8,
@@ -85,7 +85,7 @@ export const leadershipMembers = [
   {
     name: "Miles Clarke",
     role: "Treasurer",
-    tagline: "Manages club budgeting, spending, and financial planning.",
+    tagline: "Budget Planning Lead",
     image: "/assets/leadership/miles-clarke.svg",
     accent: "from-brand-800 to-brand-500",
     hoverHueShift: 14,
@@ -95,7 +95,7 @@ export const leadershipMembers = [
   {
     name: "Sam Otto",
     role: "VP of External Relations",
-    tagline: "Builds partnerships with organizations beyond campus.",
+    tagline: "Partnerships Outreach Lead",
     image: "/assets/leadership/sam-otto.svg",
     accent: "from-brand-700 to-brand-400",
     hoverHueShift: -12,
@@ -105,7 +105,7 @@ export const leadershipMembers = [
   {
     name: "Caitlyn Eggert",
     role: "VP of Marketing",
-    tagline: "Owns brand voice and promotes events across channels.",
+    tagline: "Brand Growth Lead",
     image: "/assets/leadership/caitlyn-eggert.svg",
     accent: "from-brand-600 to-brand-300",
     hoverHueShift: 22,
@@ -115,7 +115,7 @@ export const leadershipMembers = [
   {
     name: "Kyle Morgan",
     role: "Webmaster",
-    tagline: "Maintains the website and ships updates for the club.",
+    tagline: "Website Updates Lead",
     image: "/assets/leadership/kyle-morgan.svg",
     accent: "from-brand-900 to-brand-600",
     hoverHueShift: -9,
@@ -125,7 +125,7 @@ export const leadershipMembers = [
   {
     name: "Cruz Landers",
     role: "Co-Director of Digital Media",
-    tagline: "Leads social content and digital storytelling.",
+    tagline: "Social Content Lead",
     image: "/assets/leadership/cruz-landers.svg",
     accent: "from-brand-700 to-brand-500",
     hoverHueShift: 12,
@@ -135,7 +135,7 @@ export const leadershipMembers = [
   {
     name: "Lucas Winger",
     role: "Co-Director of Digital Media",
-    tagline: "Produces visual assets and helps shape campaign creative.",
+    tagline: "Creative Assets Lead",
     image: "/assets/leadership/lucas-winger.svg",
     accent: "from-brand-800 to-brand-400",
     hoverHueShift: 26,

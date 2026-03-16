@@ -166,7 +166,7 @@ function LeaderCard({
           </div>
 
           {/* Name, role, tagline overlaid */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 p-2 sm:p-3">
+          <div className="absolute bottom-0 left-0 right-0 z-20 px-2 pb-2.5 pt-2 sm:px-3 sm:pb-3.5 sm:pt-3">
             <div className="mb-1 inline-flex items-center gap-1">
               <span
                 className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${leader.accent} transition-[filter] duration-700 group-hover:[filter:hue-rotate(var(--leader-hover-hue))]`}
@@ -178,7 +178,7 @@ function LeaderCard({
             <h4 className="mb-0 text-sm tracking-tight text-white sm:mb-0.5 sm:text-base">
               {leader.name}
             </h4>
-            <p className="hidden max-h-0 overflow-hidden !text-gray-200 text-[11px] leading-snug opacity-0 transition-all duration-500 group-hover:max-h-8 group-hover:opacity-100 sm:block">
+            <p className="hidden max-h-0 overflow-hidden pb-0.5 !text-gray-200 text-[11px] leading-snug opacity-0 transition-all duration-500 group-hover:max-h-32 group-hover:overflow-visible group-hover:opacity-100 sm:block">
               {leader.tagline}
             </p>
           </div>
