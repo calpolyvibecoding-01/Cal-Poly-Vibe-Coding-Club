@@ -8,7 +8,7 @@ export const siteConfig = {
     "https://docs.google.com/forms/d/e/1FAIpQLSdVtJ6Rsoq_XNuWrytZPqk2C1y2-8pccYIdyYrrwZ6yi3mdBQ/viewform",
   applicationForm:
     "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5z4zMVGTABlMow5kEbv25HNURUtVQVc4MkNGRjVBSEEzMDJKU0U3SVZEQS4u",
-  location: ["TBD", ""],
+  location: ["Building 003, Business Silo", ""],
 };
 
 export const navItems = [
@@ -23,7 +23,7 @@ export const activities = [
     title: "Weekly Meetings",
     description:
       "Hands-on sessions covering every aspect of coding, and utilizing AI.",
-    schedule: "Click 'Join Us' to give your say on meeting timing.",
+    schedule: "Fridays, 11AM in the Business Silo.",
     glowColor: [109, 225, 215] as [number, number, number],
     icon: "code2" as const,
   },
