@@ -144,11 +144,7 @@ export const leadershipMembers = [
   },
 ] as const;
 
-export const openLeadershipRoles = [
-  {
-    title: "VP of Programming",
-  },
-] as const;
+export const openLeadershipRoles = [] as const;
 
 export const projects = [
   {
