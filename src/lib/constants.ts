@@ -3,9 +3,10 @@ export const siteConfig = {
   description:
     "A community of developers building real projects, learning new skills, and growing together.",
   email: "calpolyvibecoding@gmail.com",
-  slackInviteUrl: "https://join.slack.com/t/calpolyvibecodingclub/shared_invite/zt-3rz3f4pmu-m75dMlQPGW4l8cN31nf6KQ",
+  slackInviteUrl:
+    "https://join.slack.com/t/calpolyvibecodingclub/shared_invite/zt-3rz3f4pmu-m75dMlQPGW4l8cN31nf6KQ",
   formInviteUrl:
-    "https://docs.google.com/forms/d/e/1FAIpQLSdVtJ6Rsoq_XNuWrytZPqk2C1y2-8pccYIdyYrrwZ6yi3mdBQ/viewform",
+    "https://docs.google.com/forms/d/e/1FAIpQLSfR9glmxZbX9WbVEogkSJd5n_fUqbRRrNZF9MZuF-DJUtyFrg/viewform?usp=header",
   applicationForm:
     "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5z4zMVGTABlMow5kEbv25HNURUtVQVc4MkNGRjVBSEEzMDJKU0U3SVZEQS4u",
   location: ["Building 003, Business Silo", ""],
