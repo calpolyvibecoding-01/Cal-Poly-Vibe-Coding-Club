@@ -144,7 +144,7 @@ export const leadershipMembers = [
   },
 ] as const;
 
-export const openLeadershipRoles = [] as const;
+export const openLeadershipRoles: readonly { title: string }[] = [];
 
 export const projects = [
   {
