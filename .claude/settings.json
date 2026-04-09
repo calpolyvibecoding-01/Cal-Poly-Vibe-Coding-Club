@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npx next:*)",
+      "Bash(curl -s http://localhost:3000/robots.txt)",
+      "Bash(curl -s http://localhost:3000/sitemap.xml)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Read(//Users/kylemorgan/Documents/Computer Science/Website Development/Cal-Poly-Vibe-Coding-Club/**)",
+      "Bash(curl -s http://localhost:3001/robots.txt)",
+      "Bash(curl -s http://localhost:3001/sitemap.xml)",
+      "Bash(curl -s http://localhost:3001/)"
+    ]
+  }
+}
