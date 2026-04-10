@@ -255,7 +255,7 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
           >
             <Image
               src="/assets/CPVC_Full_Cropped.png"
-              alt={siteConfig.name}
+              alt="Cal Poly Vibe Coding Club logo"
               width={743}
               height={214}
               className="h-auto w-[112px] sm:w-[126px] md:w-[148px] lg:w-[158px]"

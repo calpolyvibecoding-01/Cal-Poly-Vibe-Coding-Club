@@ -128,7 +128,7 @@ function LeaderCard({
         <div className="relative aspect-[4/5] overflow-hidden">
           <AdaptiveImage
             src={leader.image}
-            alt={leader.name}
+            alt={`${leader.name}, ${leader.role} of Cal Poly Vibe Coding Club`}
             fill
             sizes="(max-width: 640px) 33vw, (max-width: 1280px) 25vw, 12.5vw"
             className={`h-full w-full object-cover ${

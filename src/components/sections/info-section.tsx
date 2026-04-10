@@ -217,7 +217,7 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
           className="mt-20 text-center text-zinc-400"
         >
           <p className="text-base md:text-lg">
-            <TextScramble text="(c) 2026 Vibe Coding Club." />
+            <TextScramble text="© 2026 Cal Poly Vibe Coding Club — California Polytechnic State University, San Luis Obispo" />
           </p>
         </motion.div>
       </div>
