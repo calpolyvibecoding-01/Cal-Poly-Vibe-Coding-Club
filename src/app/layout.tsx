@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Vibe Coding Club — Cal Poly SLO",
   },
   description:
-    "Cal Poly SLO's AI and vibe coding club. Weekly workshops, hackathons, and a community of builders turning ideas into real projects with AI. No coding experience required.",
+    "Cal Poly SLO's AI and vibe coding club. Weekly workshops, hackathons, and a community turning ideas into real projects with AI. No experience required.",
   keywords: [
     "Cal Poly vibe coding",
     "Cal Poly SLO clubs",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Cal Poly Vibe Coding Club",
     title: "Vibe Coding Club | Cal Poly SLO",
     description:
-      "Cal Poly SLO's AI and vibe coding club. Weekly workshops, hackathons, and a community of builders turning ideas into real projects with AI. No coding experience required.",
+      "Cal Poly SLO's AI and vibe coding club. Weekly workshops, hackathons, and a community turning ideas into real projects with AI. No experience required.",
     images: [
       {
         url: "/og-image.png",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vibe Coding Club | Cal Poly SLO",
     description:
-      "Cal Poly SLO's AI and vibe coding club. Weekly workshops, hackathons, and a community of builders turning ideas into real projects with AI. No coding experience required.",
+      "Cal Poly SLO's AI and vibe coding club. Weekly workshops, hackathons, and a community turning ideas into real projects with AI. No experience required.",
     images: ["/og-image.png"],
   },
   icons: {

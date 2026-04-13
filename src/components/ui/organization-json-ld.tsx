@@ -20,7 +20,10 @@ export function OrganizationJsonLd() {
       name: "California Polytechnic State University San Luis Obispo",
       url: "https://www.calpoly.edu",
     },
-    sameAs: ["https://www.instagram.com/calpolyvibecoding/"],
+    sameAs: [
+      "https://www.instagram.com/calpolyvibecoding/",
+      "https://www.linkedin.com/company/cal-poly-vibe-coding/",
+    ],
   };
 
   return (
