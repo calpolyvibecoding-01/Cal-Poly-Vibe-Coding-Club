@@ -133,16 +133,6 @@ export const leadershipMembers = [
     hoverGlow: "rgba(109, 225, 215, 0.3)",
     linkedin: "https://www.linkedin.com/in/kyle-morgan0/",
   },
-  {
-    name: "Lucas Winger",
-    role: "Director of Digital Media",
-    tagline: "Creative Assets Lead",
-    image: "/assets/leadership/lucas-winger.svg",
-    accent: "from-brand-800 to-brand-400",
-    hoverHueShift: 26,
-    hoverGlow: "rgba(109, 225, 215, 0.3)",
-    linkedin: "https://www.linkedin.com/in/lucaswinger/",
-  },
 ] as const;
 
 export const openLeadershipRoles: readonly { title: string }[] = [];
