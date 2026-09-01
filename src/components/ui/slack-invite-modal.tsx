@@ -156,7 +156,7 @@ export function SlackInviteModal({
                   <div className="mt-8 max-w-xl border-t border-zinc-900/15 pt-3">
                     <p className="text-sm font-medium tracking-[0.08em] text-zinc-700 md:text-sm">
                       <span className="text-zinc-900">NEXT MEETING</span>
-                      &nbsp;|&nbsp; Friday, 11AM in the Business Silo
+                      &nbsp;|&nbsp; Friday, 12PM - 2PM in Frost 0102
                     </p>
                   </div>
                 </div>
