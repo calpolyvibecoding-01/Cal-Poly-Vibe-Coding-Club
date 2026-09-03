@@ -10,6 +10,17 @@ export const siteConfig = {
   applicationForm:
     "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5z4zMVGTABlMow5kEbv25HNURUtVQVc4MkNGRjVBSEEzMDJKU0U3SVZEQS4u",
     location: ["Building 181 (Frost)", "Room 0102"],
+  /**
+   * The member app — sign-up, login, the build board, profile editing. A
+   * separate Next.js deployment, not a route on this site.
+   *
+   * Points at /login specifically, not the bare origin: a signed-in member
+   * hitting /login is redirected straight to /me (their dashboard) by that
+   * app, and a signed-out member sees the login form. One URL correctly
+   * serves both "log in" and "go to my dashboard" depending on whether a
+   * session cookie is already there — no need for two separate nav items.
+   */
+  memberPortalUrl: "https://calpolyvibecoding.vercel.app/login",
 };
 
 export const navItems = [
@@ -17,6 +28,12 @@ export const navItems = [
   { label: "Projects", href: "#projects" },
   { label: "Leadership", href: "#leadership" },
   { label: "Contact", href: "#contact" },
+  // NOT a "#hash" — an absolute URL to a different deployment. StickyHeader's
+  // RollingLink and the mobile menu both branch on that distinction (see the
+  // comment there): every other item here scrolls the current page,
+  // this one navigates away, and treating it as a scroll target would call
+  // `document.querySelector("https://...")`, which throws.
+  { label: "Login", href: siteConfig.memberPortalUrl },
 ] as const;
 
 export const activities = [

@@ -60,12 +60,27 @@ function RollingLink({ text, href }: { text: string; href: string }) {
     gsap.to(bottom, { y: "110%", duration: 0.35, ease: "power3.inOut" });
   }, []);
 
+  /**
+   * Every nav item used to be an in-page anchor, so this always
+   * preventDefault()'d and smooth-scrolled. That breaks the moment an item
+   * points somewhere else: smoothScrollToHash() calls
+   * document.querySelector(href), and querySelector on a full URL like
+   * "https://…" throws — the browser's default navigation is already
+   * cancelled by then, so the click would silently go nowhere. Only hijack
+   * the click for an actual in-page hash; anything else (the Login link to
+   * the member app) gets ordinary browser navigation.
+   */
+  const isPageAnchor = href.startsWith("#");
+
   const handleClick = useCallback(
     (event: ReactMouseEvent<HTMLAnchorElement>) => {
+      if (!isPageAnchor) {
+        return;
+      }
       event.preventDefault();
       smoothScrollToHash(href);
     },
-    [href]
+    [href, isPageAnchor]
   );
 
   return (
@@ -341,8 +356,16 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
                 key={item.label}
                 href={item.href}
                 onClick={(event) => {
-                  event.preventDefault();
                   setMobileOpen(false);
+                  // Same distinction as RollingLink above: only an in-page
+                  // hash gets hijacked into a smooth scroll. A real URL (the
+                  // Login link) needs its default navigation left alone, or
+                  // smoothScrollToHash's document.querySelector(item.href)
+                  // throws on the full URL.
+                  if (!item.href.startsWith("#")) {
+                    return;
+                  }
+                  event.preventDefault();
                   smoothScrollToHash(item.href);
                 }}
                 className="py-1 text-base tracking-[0.01em] text-black/75 transition-colors hover:text-black"
