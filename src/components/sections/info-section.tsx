@@ -76,8 +76,7 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
               <h2 className="section-title">Our Mission</h2>
             </div>
             <p className="section-intro max-w-md md:text-right">
-              AI lets creativity turn into reality. If you can dream it, you can
-              make it. No code required.
+              Bring students of every background together to build with AI, learning from peers and the people already shaping the industry, so every member walks away with a portfolio of real projects and the confidence to build whatever comes next.
             </p>
           </div>
 
