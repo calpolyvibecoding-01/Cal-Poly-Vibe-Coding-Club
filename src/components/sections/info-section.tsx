@@ -76,10 +76,13 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
             <h2 className="section-title">Our Mission</h2>
           </div>
           <p className="section-intro max-w-lg leading-relaxed md:text-right">
-            Bring students of every background together to build with AI, learning
-            from peers and the people already shaping the industry, so every member
-            walks away with a portfolio of real projects and the confidence to
-            build whatever comes next.
+            Bring students of every background together to build with AI,
+            <br />
+            learning from peers and the people already shaping the industry,
+            <br />
+            so every member walks away with a portfolio of real projects
+            <br />
+            and the confidence to build whatever comes next.
           </p>
         </div>
 
