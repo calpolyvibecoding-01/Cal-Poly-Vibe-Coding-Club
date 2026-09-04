@@ -131,12 +131,7 @@ function LeaderCard({
             alt={`${leader.name}, ${leader.role} of Cal Poly Vibe Coding Club`}
             fill
             sizes="(max-width: 640px) 33vw, (max-width: 1280px) 25vw, 12.5vw"
-            // Faded on purpose — the name, role and year/major are the point
-            // of the card, not the photo, so the portrait sits behind them as
-            // a dim backdrop rather than competing with the text for
-            // attention. Stays faded even on hover, unlike the grayscale
-            // reveal below.
-            className={`h-full w-full object-cover opacity-35 ${
+            className={`h-full w-full object-cover ${
               disableAnimation
                 ? "grayscale-0"
                 : "grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
@@ -144,7 +139,7 @@ function LeaderCard({
           />
 
           {/* Flat matte overlay on mobile; gradient restored on larger screens */}
-          <div className="absolute inset-0 bg-zinc-950/70 sm:bg-gradient-to-t sm:from-zinc-950/95 sm:via-zinc-950/55 sm:to-zinc-950/20" />
+          <div className="absolute inset-0 bg-zinc-950/55 sm:bg-gradient-to-t sm:from-zinc-950/90 sm:via-zinc-950/30 sm:to-transparent" />
 
           {/* Top accent bar */}
           <div
