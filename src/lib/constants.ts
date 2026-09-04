@@ -17,14 +17,20 @@ export const siteConfig = {
    * domain — by request, nothing about the URL bar should read as "left
    * the club's site."
    *
-   * Points at /portal/login specifically, not the bare /portal: a signed-in
-   * member hitting it is redirected straight to /portal/me (their
-   * dashboard) by that app, and a signed-out member sees the login form.
-   * One URL correctly serves both "log in" and "go to my dashboard"
-   * depending on whether a session cookie is already there — no need for
-   * two separate nav items.
+   * Points at /portal/join, NOT /portal/login. That one used to be the
+   * target here, and it is the wrong default: a signed-out visitor hitting
+   * /portal/login sees a LOG IN form, asking for credentials someone who has
+   * never had an account does not have — the opposite of "create account is
+   * the default," which is the whole reason the sign-up form (not a login
+   * screen) is what /portal itself shows. /portal/join is the smart-redirect
+   * route built for exactly this: signed in -> straight to /portal/me (their
+   * dashboard), signed out -> the bare /portal sign-up. One URL correctly
+   * serves both "I'm new" and "take me to my dashboard" depending on whether
+   * a session cookie is already there — no need for two separate nav items,
+   * and no one lands on a form asking them to prove they already have an
+   * account they don't have.
    */
-  memberPortalUrl: "/portal/login",
+  memberPortalUrl: "/portal/join",
 };
 
 export const navItems = [
@@ -37,7 +43,7 @@ export const navItems = [
   // menu both branch on that distinction (see the comment there): every
   // other item here scrolls the current page, this one navigates away, and
   // treating it as a scroll target would call
-  // `document.querySelector("/portal/login")`, which throws.
+  // `document.querySelector("/portal/join")`, which throws.
   //
   // Labelled "Portal", not "Login": this is the club's own name for the
   // member app as a destination, not just the login form specifically — the
