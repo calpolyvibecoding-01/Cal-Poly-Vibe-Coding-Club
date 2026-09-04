@@ -70,12 +70,12 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
           viewport={{ once: true }}
           className="section-header scroll-mt-24"
         >
-        <div className="mb-6 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+        <div className="mb-6 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="section-kicker">What we believe</p>
             <h2 className="section-title">Our Mission</h2>
           </div>
-          <p className="section-intro max-w-lg leading-relaxed md:text-right">
+          <p className="section-intro max-w-lg leading-loose md:text-right">
             Bring students of every background together to build with AI,
             <br />
             learning from peers and the people already shaping the industry,
