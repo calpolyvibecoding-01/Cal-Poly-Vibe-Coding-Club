@@ -12,15 +12,19 @@ export const siteConfig = {
     location: ["Building 181 (Frost)", "Room 0102"],
   /**
    * The member app — sign-up, login, the build board, profile editing. A
-   * separate Next.js deployment, not a route on this site.
+   * SEPARATE Next.js deployment, proxied to look like a path on this site
+   * (see next.config.ts's rewrites()) rather than linked to as a different
+   * domain — by request, nothing about the URL bar should read as "left
+   * the club's site."
    *
-   * Points at /login specifically, not the bare origin: a signed-in member
-   * hitting /login is redirected straight to /me (their dashboard) by that
-   * app, and a signed-out member sees the login form. One URL correctly
-   * serves both "log in" and "go to my dashboard" depending on whether a
-   * session cookie is already there — no need for two separate nav items.
+   * Points at /portal/login specifically, not the bare /portal: a signed-in
+   * member hitting it is redirected straight to /portal/me (their
+   * dashboard) by that app, and a signed-out member sees the login form.
+   * One URL correctly serves both "log in" and "go to my dashboard"
+   * depending on whether a session cookie is already there — no need for
+   * two separate nav items.
    */
-  memberPortalUrl: "https://calpolyvibecoding.vercel.app/login",
+  memberPortalUrl: "/portal/login",
 };
 
 export const navItems = [
@@ -28,12 +32,19 @@ export const navItems = [
   { label: "Projects", href: "#projects" },
   { label: "Leadership", href: "#leadership" },
   { label: "Contact", href: "#contact" },
-  // NOT a "#hash" — an absolute URL to a different deployment. StickyHeader's
-  // RollingLink and the mobile menu both branch on that distinction (see the
-  // comment there): every other item here scrolls the current page,
-  // this one navigates away, and treating it as a scroll target would call
-  // `document.querySelector("https://...")`, which throws.
-  { label: "Login", href: siteConfig.memberPortalUrl },
+  // NOT a "#hash" — a path proxied to a different deployment (see
+  // next.config.ts's rewrites()). StickyHeader's RollingLink and the mobile
+  // menu both branch on that distinction (see the comment there): every
+  // other item here scrolls the current page, this one navigates away, and
+  // treating it as a scroll target would call
+  // `document.querySelector("/portal/login")`, which throws.
+  //
+  // Labelled "Portal", not "Login": this is the club's own name for the
+  // member app as a destination, not just the login form specifically — the
+  // "Join Us" button stays a separate, Slack-focused CTA (by request, back
+  // to exactly how it worked before this nav item existed), so this is the
+  // only link into the member app in the header and reads that way.
+  { label: "Portal", href: siteConfig.memberPortalUrl },
 ] as const;
 
 export const activities = [
