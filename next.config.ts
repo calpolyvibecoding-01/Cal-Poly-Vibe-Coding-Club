@@ -30,6 +30,30 @@ const nextConfig: NextConfig = {
    */
   async rewrites() {
     return [
+      /**
+       * TWO RULES, NOT ONE, AND THE SPLIT IS LOAD-BEARING.
+       *
+       * A single `{ source: "/portal/:path*", destination: ".../portal/:path*" }`
+       * looks like it should cover the bare "/portal" too — `:path*` is
+       * "zero or more" — but the destination TEMPLATE keeps its literal "/"
+       * before `:path*` even when the param matches nothing. So a request
+       * for exactly "/portal" got proxied to ".../portal/" (a real trailing
+       * slash), the member app's own trailingSlash:false redirected that
+       * back to ".../portal", and this same rule caught THAT request too —
+       * an infinite loop, live in production, invisible in every local test
+       * because local testing only ever hit /portal/join, /portal/login —
+       * paths with a real segment after the slash, where the bug doesn't
+       * exist. Confirmed via curl -D-, not guessed: the response was
+       * Vercel's own "too many redirects" fallback page.
+       *
+       * The fix used everywhere this pattern is documented: an exact rule
+       * for the bare path with no trailing slash in its destination, and
+       * the catch-all for everything under it.
+       */
+      {
+        source: "/portal",
+        destination: "https://calpolyvibecoding.vercel.app/portal",
+      },
       {
         source: "/portal/:path*",
         destination: "https://calpolyvibecoding.vercel.app/portal/:path*",
