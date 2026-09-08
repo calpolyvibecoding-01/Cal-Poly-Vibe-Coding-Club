@@ -17,18 +17,20 @@ export const siteConfig = {
    * domain — by request, nothing about the URL bar should read as "left
    * the club's site."
    *
-   * Points at /portal/join, NOT /portal/login. That one used to be the
-   * target here, and it is the wrong default: a signed-out visitor hitting
+   * Points at /portal/join, NOT /portal/login: a signed-out visitor hitting
    * /portal/login sees a LOG IN form, asking for credentials someone who has
    * never had an account does not have — the opposite of "create account is
-   * the default," which is the whole reason the sign-up form (not a login
-   * screen) is what /portal itself shows. /portal/join is the smart-redirect
-   * route built for exactly this: signed in -> straight to /portal/me (their
-   * dashboard), signed out -> the bare /portal sign-up. One URL correctly
-   * serves both "I'm new" and "take me to my dashboard" depending on whether
-   * a session cookie is already there — no need for two separate nav items,
-   * and no one lands on a form asking them to prove they already have an
-   * account they don't have.
+   * the default." /portal/join is the smart-redirect route built for exactly
+   * this: signed in -> straight to /portal/me (their dashboard), signed out
+   * -> the bare /portal sign-up. One URL correctly serves both "I'm new" and
+   * "take me to my dashboard" depending on whether a session cookie is
+   * already there.
+   *
+   * This is now the header's PRIMARY call-to-action ("Student Portal"), not
+   * a nav item — see StickyHeader, where both the desktop button and the
+   * mobile menu button navigate here directly. The old "Portal" nav tab and
+   * "Join Us" button have swapped destinations entirely: Slack is the nav
+   * item now, the member app is the CTA. By request.
    */
   memberPortalUrl: "/portal/join",
 };
@@ -38,19 +40,18 @@ export const navItems = [
   { label: "Projects", href: "#projects" },
   { label: "Leadership", href: "#leadership" },
   { label: "Contact", href: "#contact" },
-  // NOT a "#hash" — a path proxied to a different deployment (see
-  // next.config.ts's rewrites()). StickyHeader's RollingLink and the mobile
-  // menu both branch on that distinction (see the comment there): every
-  // other item here scrolls the current page, this one navigates away, and
-  // treating it as a scroll target would call
-  // `document.querySelector("/portal/join")`, which throws.
+  // Was "Portal" -> memberPortalUrl; now "Stay Connected" -> the Slack
+  // invite. The header's CTA button took over the member-app link (see
+  // memberPortalUrl's comment) and this nav item took over what "Join Us"
+  // used to do — by request, a straight swap of the two destinations.
   //
-  // Labelled "Portal", not "Login": this is the club's own name for the
-  // member app as a destination, not just the login form specifically — the
-  // "Join Us" button stays a separate, Slack-focused CTA (by request, back
-  // to exactly how it worked before this nav item existed), so this is the
-  // only link into the member app in the header and reads that way.
-  { label: "Portal", href: siteConfig.memberPortalUrl },
+  // The href IS the real Slack URL (not a "#" placeholder), so this still
+  // works as a plain link with JS disabled or opened in a new tab. With JS,
+  // StickyHeader intercepts a click on this exact href and opens the richer
+  // Slack invite MODAL instead (meeting time, the interest-form alternative)
+  // — see the `item.href === siteConfig.slackInviteUrl` checks there, the
+  // same pattern the "#hash vs. real URL" branch already used for this spot.
+  { label: "Stay Connected", href: siteConfig.slackInviteUrl },
 ] as const;
 
 export const activities = [

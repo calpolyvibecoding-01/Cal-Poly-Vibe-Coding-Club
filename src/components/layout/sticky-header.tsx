@@ -19,7 +19,19 @@ interface StickyHeaderProps {
   onJoinSlackClick?: () => void;
 }
 
-function RollingLink({ text, href }: { text: string; href: string }) {
+function RollingLink({
+  text,
+  href,
+  onClick: onClickOverride,
+}: {
+  text: string;
+  href: string;
+  /** When set, a click fires this instead of following `href` at all — used
+   *  for the Slack nav item, which should open the invite modal rather than
+   *  a plain navigation. `href` still renders as the real Slack URL so the
+   *  link works with JS disabled or opened in a new tab. */
+  onClick?: () => void;
+}) {
   const linkRef = useRef<HTMLAnchorElement>(null);
 
   const handleEnter = useCallback(() => {
@@ -67,20 +79,26 @@ function RollingLink({ text, href }: { text: string; href: string }) {
    * document.querySelector(href), and querySelector on a full URL like
    * "https://…" throws — the browser's default navigation is already
    * cancelled by then, so the click would silently go nowhere. Only hijack
-   * the click for an actual in-page hash; anything else (the Login link to
-   * the member app) gets ordinary browser navigation.
+   * the click for an actual in-page hash; anything else (the Slack nav item)
+   * gets ordinary browser navigation, UNLESS `onClickOverride` is set (see
+   * below), which takes priority over both.
    */
   const isPageAnchor = href.startsWith("#");
 
   const handleClick = useCallback(
     (event: ReactMouseEvent<HTMLAnchorElement>) => {
+      if (onClickOverride) {
+        event.preventDefault();
+        onClickOverride();
+        return;
+      }
       if (!isPageAnchor) {
         return;
       }
       event.preventDefault();
       smoothScrollToHash(href);
     },
-    [href, isPageAnchor]
+    [href, isPageAnchor, onClickOverride]
   );
 
   return (
@@ -290,6 +308,11 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
                 key={item.label}
                 text={item.label}
                 href={item.href}
+                onClick={
+                  item.href === siteConfig.slackInviteUrl
+                    ? onJoinSlackClick
+                    : undefined
+                }
               />
             ))}
             <HoverLine containerRef={navRef} />
@@ -297,14 +320,16 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
 
           <div className="hidden md:block">
             <MagneticButton
-              onClick={onJoinSlackClick}
+              onClick={() => {
+                window.location.assign(siteConfig.memberPortalUrl);
+              }}
               className="btn btn-primary rounded-md group cursor-pointer"
             >
               <span
                 className="relative z-10 flex items-center gap-1.5"
                 style={{ fontWeight: 500 }}
               >
-                Join Us
+                Student Portal
                 <svg
                   className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   fill="none"
@@ -357,11 +382,17 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
                 href={item.href}
                 onClick={(event) => {
                   setMobileOpen(false);
-                  // Same distinction as RollingLink above: only an in-page
-                  // hash gets hijacked into a smooth scroll. A real URL (the
-                  // Login link) needs its default navigation left alone, or
-                  // smoothScrollToHash's document.querySelector(item.href)
-                  // throws on the full URL.
+                  // Same distinction as RollingLink above: an in-page hash
+                  // gets hijacked into a smooth scroll, the Slack item opens
+                  // the invite modal instead of following its href, and any
+                  // other real URL gets its default navigation left alone
+                  // (or smoothScrollToHash's document.querySelector(item.href)
+                  // throws on the full URL).
+                  if (item.href === siteConfig.slackInviteUrl) {
+                    event.preventDefault();
+                    onJoinSlackClick?.();
+                    return;
+                  }
                   if (!item.href.startsWith("#")) {
                     return;
                   }
@@ -376,10 +407,13 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
             <button
               className="btn btn-primary mt-2 w-full"
               style={{ fontWeight: 500 }}
-              onClick={() => {}}
+              onClick={() => {
+                setMobileOpen(false);
+                window.location.assign(siteConfig.memberPortalUrl);
+              }}
               type="button"
             >
-              Join Us
+              Student Portal
             </button>
           </div>
         )}
