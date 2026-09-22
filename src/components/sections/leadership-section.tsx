@@ -29,6 +29,28 @@ const staggerOffsets = [
   "lg:mt-3",
 ] as const;
 
+/* The board does not divide evenly into the grid, so the last row is centred
+   rather than left-ragged.
+
+   md is 8 half-columns and every card spans 2, which gives 4 cards per row and
+   — unlike a plain 4-column grid — a spare half-column to offset a short row
+   by. A trailing row of k cards leaves 8 - 2k columns free, so it starts at
+   column 5 - k. lg fits the whole board on one flush row.
+
+   Both are sized to the current roster. Change `lg:grid-cols-7` below if the
+   board stops being seven people. */
+const MD_CARDS_PER_ROW = 4;
+const mdLastRowOffsets: Record<number, string> = {
+  1: "md:col-start-4 lg:col-start-auto",
+  2: "md:col-start-3 lg:col-start-auto",
+  3: "md:col-start-2 lg:col-start-auto",
+};
+const lastRowStart =
+  Math.floor((leadershipMembers.length - 1) / MD_CARDS_PER_ROW) *
+  MD_CARDS_PER_ROW;
+const mdLastRowStart =
+  mdLastRowOffsets[leadershipMembers.length - lastRowStart] ?? "";
+
 /* ─── Compact portrait card ─── */
 function LeaderCard({
   leader,
@@ -130,7 +152,7 @@ function LeaderCard({
             src={leader.image}
             alt={`${leader.name}, ${leader.role} of Cal Poly Vibe Coding Club`}
             fill
-            sizes="(max-width: 640px) 33vw, (max-width: 1280px) 25vw, 12.5vw"
+            sizes="(max-width: 640px) 33vw, (max-width: 1280px) 25vw, 14.3vw"
             className={`h-full w-full object-cover ${
               disableAnimation
                 ? "grayscale-0"
@@ -299,11 +321,13 @@ export function LeadershipSection() {
       </div>
 
       {/* Tablet/Desktop: portrait cards */}
-      <div className="hidden gap-4 md:grid md:grid-cols-4 lg:grid-cols-8">
+      <div className="hidden gap-4 md:grid md:grid-cols-8 lg:grid-cols-7">
         {leadershipMembers.map((leader, index) => (
           <div
             key={leader.name}
-            className={staggerOffsets[index % staggerOffsets.length]}
+            className={`md:col-span-2 lg:col-span-1 ${
+              index === lastRowStart ? mdLastRowStart : ""
+            } ${staggerOffsets[index % staggerOffsets.length]}`}
           >
             <LeaderCard
               leader={leader}
