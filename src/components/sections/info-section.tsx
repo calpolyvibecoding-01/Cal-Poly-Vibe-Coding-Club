@@ -16,8 +16,8 @@ import {
 import { activities, siteConfig } from "@/lib/constants";
 import { LeadershipSection } from "@/components/sections/leadership-section";
 import { MemberProfileSection } from "@/components/sections/member-profile-section";
+import { PartnerSpotlight } from "@/components/sections/partner-projects";
 import { ProjectsSection } from "@/components/sections/projects-section";
-import { ProjectsTeaser } from "@/components/sections/projects-teaser";
 import { Marquee } from "@/components/ui/marquee";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { TextScramble } from "@/components/ui/text-scramble";
@@ -136,11 +136,11 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
           })}
         </div>
 
-        <ProjectsTeaser />
+        <PartnerSpotlight />
 
         {/* ============================================================
             PROJECTS SECTION — PRESERVED FOR FUTURE USE
-            Uncomment and replace <ProjectsTeaser /> when ready to launch
+            Uncomment and replace <PartnerSpotlight /> when ready to launch
             ============================================================ */}
         {/* <ProjectsSection /> */}
 

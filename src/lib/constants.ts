@@ -175,6 +175,34 @@ export const leadershipMembers = [
 
 export const openLeadershipRoles: readonly { title: string }[] = [];
 
+/* Nonprofit builds for the current term. Only list a project once the
+   nonprofit has signed off on its scope. */
+export const partnerProjectsTerm = "Fall 2026";
+
+export const partnerProjects = [
+  {
+    partner: "Ventura County Legal Aid",
+    title: "Clinic Queue & Intake System",
+    description:
+      "Ventura County Legal Aid runs free walk-in civil law clinics, which it coordinates today with paper intake forms and attorney sign-in sheets. We're building a clinic queue and intake system reliable enough to use in the middle of a busy session. Staff will see attorney capacity and wait times live, and clients will spend less time waiting.",
+    tags: ["Ventura County", "Legal Aid"],
+  },
+  {
+    partner: "ECOSLO",
+    title: "Tree Nursery Inventory & Planting Tracker",
+    description:
+      "ECOSLO is building a tree nursery for its community planting program. We're building the tracker that runs it. It follows every tree from seedling to planting: species, health, spot in the nursery, whether it's ready, and where it's going, from city parks to homeowners' yards.",
+    tags: ["San Luis Obispo", "Environment"],
+  },
+  {
+    partner: "Restorative Partners",
+    title: "Walk-In Visitor Tracker",
+    description:
+      "Restorative Partners in San Luis Obispo tracks walk-in visitors by hand. We're building a visitor tracking app that runs on their own Google Cloud, with CSV export for grant reporting. When it's done, we hand over the source code, deployment setup and documentation so their staff can run it without us.",
+    tags: ["San Luis Obispo", "Social Services"],
+  },
+] as const;
+
 export const projects = [
   {
     title: "Example Project 1",
