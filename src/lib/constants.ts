@@ -179,6 +179,10 @@ export const openLeadershipRoles: readonly { title: string }[] = [];
    nonprofit has signed off on its scope. */
 export const partnerProjectsTerm = "Fall 2026";
 
+/* Students sign up for a partner project team here. */
+export const partnerProjectsSignupUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLScazKWdgbROzk-dN-tRfWHBkQ9pCIYxVb07NTbNe0o-V80Lsw/viewform";
+
 export const partnerProjects = [
   {
     partner: "Ventura County Legal Aid",

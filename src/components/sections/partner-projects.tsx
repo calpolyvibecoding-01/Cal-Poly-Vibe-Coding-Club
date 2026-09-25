@@ -8,7 +8,12 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
 import { motion } from "motion/react";
-import { partnerProjects, partnerProjectsTerm } from "@/lib/constants";
+import { ArrowUpRight } from "lucide-react";
+import {
+  partnerProjects,
+  partnerProjectsSignupUrl,
+  partnerProjectsTerm,
+} from "@/lib/constants";
 
 type PartnerProject = (typeof partnerProjects)[number];
 
@@ -133,6 +138,25 @@ function PartnerCard({
       </p>
       <Tags tags={project.tags} tone="dark" />
     </article>
+  );
+}
+
+/* Same treatment as the header's Student Portal button. */
+function SignupLink({ className = "" }: { className?: string }) {
+  return (
+    <a
+      href={partnerProjectsSignupUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`btn btn-primary group gap-1.5 rounded-md ${className}`}
+    >
+      <span style={{ fontWeight: 500 }}>Join a project team</span>
+      <ArrowUpRight
+        aria-hidden="true"
+        className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+      />
+      <span className="sr-only">(opens a Google Form in a new tab)</span>
+    </a>
   );
 }
 
@@ -370,6 +394,7 @@ export function PartnerSpotlight({ id = "projects" }: { id?: string }) {
           Free software for local nonprofits.
         </h2>
         <p className="section-intro mt-6 max-w-lg">{INTRO}</p>
+        <SignupLink className="mt-8 w-full sm:w-auto" />
         <PhoneStack />
       </div>
 
@@ -385,6 +410,7 @@ export function PartnerSpotlight({ id = "projects" }: { id?: string }) {
               Free software for local nonprofits.
             </h2>
             <p className="section-intro mt-6 max-w-lg">{INTRO}</p>
+            <SignupLink className="mt-8" />
 
             <div
               role="tablist"
