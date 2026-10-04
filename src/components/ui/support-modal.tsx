@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, X } from "lucide-react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
@@ -112,6 +113,13 @@ export function SupportModal({
                 CPVC Sponsor PayPal Page
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </MagneticButton>
+              <Link
+                href="/give"
+                onClick={onClose}
+                className="btn btn-secondary btn-jiggle w-full justify-center py-4 text-base"
+              >
+                See Giving Levels
+              </Link>
             </div>
           </motion.div>
         </motion.div>
