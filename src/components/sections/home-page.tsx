@@ -7,13 +7,17 @@ import { StickyHeader } from "@/components/layout/sticky-header";
 import { FreshReveal } from "@/components/sections/fresh-reveal";
 import { InfoSection } from "@/components/sections/info-section";
 import { SlackInviteModal } from "@/components/ui/slack-invite-modal";
+import { SupportModal } from "@/components/ui/support-modal";
 import { siteConfig } from "@/lib/constants";
+
+const SUPPORT_MODAL_SESSION_KEY = "cpvc-support-modal-shown";
 
 export function HomePage() {
   const [canvasReady, setCanvasReady] = useState(false);
   const [minTimePassed, setMinTimePassed] = useState(false);
   const [loadingDone, setLoadingDone] = useState(false);
   const [showSlackModal, setShowSlackModal] = useState(false);
+  const [showSupportModal, setShowSupportModal] = useState(false);
 
   const loaderRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
@@ -28,10 +32,46 @@ export function HomePage() {
     setShowSlackModal(false);
   }, []);
 
+  const openSupportModal = useCallback(() => {
+    setShowSupportModal(true);
+  }, []);
+
+  const closeSupportModal = useCallback(() => {
+    setShowSupportModal(false);
+    try {
+      window.sessionStorage.setItem(SUPPORT_MODAL_SESSION_KEY, "1");
+    } catch {
+      // Ignore (private browsing / storage blocked).
+    }
+  }, []);
+
   useEffect(() => {
     const timer = setTimeout(() => setMinTimePassed(true), 1200);
     return () => clearTimeout(timer);
   }, []);
+
+  // Show the support/sponsor popup shortly after the load animation
+  // finishes, once per browser tab session.
+  useEffect(() => {
+    if (!loadingDone) {
+      return;
+    }
+
+    let alreadyShown = false;
+    try {
+      alreadyShown =
+        window.sessionStorage.getItem(SUPPORT_MODAL_SESSION_KEY) === "1";
+    } catch {
+      // Ignore (private browsing / storage blocked) — just show it.
+    }
+
+    if (alreadyShown) {
+      return;
+    }
+
+    const timer = setTimeout(() => setShowSupportModal(true), 900);
+    return () => clearTimeout(timer);
+  }, [loadingDone]);
 
   useEffect(() => {
     if (!logoRef.current || !textRef.current || !progressRef.current) {
@@ -135,6 +175,7 @@ export function HomePage() {
       <StickyHeader 
         visible={loadingDone}
         onJoinSlackClick={openSlackModal}
+        onGiveClick={openSupportModal}
          />
       <FreshReveal
         onCanvasReady={() => setCanvasReady(true)}
@@ -147,6 +188,12 @@ export function HomePage() {
         onClose={closeSlackModal}
         slackInviteUrl={siteConfig.slackInviteUrl}
         formInviteUrl={siteConfig.formInviteUrl}
+      />
+      <SupportModal
+        open={showSupportModal}
+        onClose={closeSupportModal}
+        givingUrl={siteConfig.givingUrl}
+        sponsorPaypalUrl={siteConfig.sponsorPaypalUrl}
       />
     </main>
   );

@@ -17,6 +17,7 @@ import { smoothScrollToHash } from "@/lib/utils";
 interface StickyHeaderProps {
   visible: boolean;
   onJoinSlackClick?: () => void;
+  onGiveClick?: () => void;
 }
 
 function RollingLink({
@@ -185,7 +186,11 @@ function HoverLine({ containerRef }: { containerRef: RefObject<HTMLElement> }) {
   );
 }
 
-export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
+export function StickyHeader({
+  visible,
+  onJoinSlackClick,
+  onGiveClick,
+}: StickyHeaderProps) {
   const headerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const [showHeader, setShowHeader] = useState(false);
@@ -311,7 +316,9 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
                 onClick={
                   item.href === siteConfig.slackInviteUrl
                     ? onJoinSlackClick
-                    : undefined
+                    : item.href === siteConfig.givingUrl
+                      ? onGiveClick
+                      : undefined
                 }
               />
             ))}
@@ -391,6 +398,11 @@ export function StickyHeader({ visible, onJoinSlackClick }: StickyHeaderProps) {
                   if (item.href === siteConfig.slackInviteUrl) {
                     event.preventDefault();
                     onJoinSlackClick?.();
+                    return;
+                  }
+                  if (item.href === siteConfig.givingUrl) {
+                    event.preventDefault();
+                    onGiveClick?.();
                     return;
                   }
                   if (!item.href.startsWith("#")) {

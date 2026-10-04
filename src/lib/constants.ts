@@ -10,6 +10,11 @@ export const siteConfig = {
   applicationForm:
     "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=2wING578lUSVNx03nMoq5z4zMVGTABlMow5kEbv25HNURUtVQVc4MkNGRjVBSEEzMDJKU0U3SVZEQS4u",
     location: ["Building 181 (Frost)", "Room 0102"],
+  /** Cal Poly's official giving page, pre-filled for CPVC (Orfalea College of Business). */
+  givingUrl:
+    "https://giving.calpoly.edu/orfalea-college-of-business?desid=7410&desname=Cal%20Poly%20Vibe%20Coding%20Club&appealid=2466&campaignid=91",
+  /** PayPal page for one-off/in-kind sponsor contributions. */
+  sponsorPaypalUrl: "https://www.paypal.com/ncp/payment/L35E9LN4RFHY6",
   /**
    * The member app — sign-up, login, the build board, profile editing. A
    * SEPARATE Next.js deployment, proxied to look like a path on this site
@@ -52,6 +57,11 @@ export const navItems = [
   // — see the `item.href === siteConfig.slackInviteUrl` checks there, the
   // same pattern the "#hash vs. real URL" branch already used for this spot.
   { label: "Stay Connected", href: siteConfig.slackInviteUrl },
+  // "Give" -> the support popup (Giving link + Sponsor PayPal). The href is
+  // the real Cal Poly giving URL so it still works with JS disabled; with JS,
+  // StickyHeader intercepts the click and opens the popup instead (same
+  // pattern as the Slack item above).
+  { label: "Give", href: siteConfig.givingUrl },
 ] as const;
 
 export const activities = [
