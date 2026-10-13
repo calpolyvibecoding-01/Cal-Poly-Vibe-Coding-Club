@@ -129,6 +129,15 @@ export function InfoSection({ onJoinSlackClick }: InfoSectionProps) {
                         <span>{activity.schedule}</span>
                       </div>
                     ) : null}
+                    {"href" in activity && activity.href ? (
+                      <a
+                        href={activity.href}
+                        className="mt-4 inline-flex items-center gap-1.5 font-medium text-black underline decoration-[#6DE1D7] decoration-2 underline-offset-4 transition-opacity hover:opacity-70"
+                      >
+                        {activity.cta}
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    ) : null}
                   </div>
                 </TiltCard>
               </motion.div>

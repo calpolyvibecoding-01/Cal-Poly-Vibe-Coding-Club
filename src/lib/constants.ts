@@ -38,12 +38,22 @@ export const siteConfig = {
    * item now, the member app is the CTA. By request.
    */
   memberPortalUrl: "/portal/join",
+  /**
+   * The AI Hackathon registration app — a SEPARATE deployment (its own
+   * Supabase backend), not this Next.js site. Live Vercel deployment under
+   * the same account as this site (project "ai-hackathon-registration").
+   * TODO: once a real subdomain (e.g. hackathon.calpolyvibecoding.com) is
+   * attached to that Vercel project, swap this to the custom domain instead
+   * of the *.vercel.app URL.
+   */
+  hackathonUrl: "https://ai-hackathon-registration.vercel.app",
 };
 
 export const navItems = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Leadership", href: "#leadership" },
+  { label: "AI Hackathon", href: siteConfig.hackathonUrl },
   { label: "Contact", href: "#contact" },
   // Was "Portal" -> memberPortalUrl; now "Stay Connected" -> the Slack
   // invite. The header's CTA button took over the member-app link (see
@@ -76,8 +86,10 @@ export const activities = [
   {
     title: "Hackathons",
     description:
-      "Themed hackathons to build real products, experiment with new technologies, and push AI skills to the limit.",
-    schedule: "First hackathon in development, date will be released soon!",
+      "Our first hackathon, AI HACKATHON, is a weekend-long build sprint co-hosted with the Orfalea College of Business and the Cal Poly Entrepreneurship Club.",
+    schedule: "November 13–15, 2026",
+    href: siteConfig.hackathonUrl,
+    cta: "Register for AI Hackathon",
     glowColor: [84, 107, 133] as [number, number, number],
     icon: "sparkles" as const,
   },
