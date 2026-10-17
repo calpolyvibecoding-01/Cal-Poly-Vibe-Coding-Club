@@ -50,6 +50,21 @@ const nextConfig: NextConfig = {
        * for the bare path with no trailing slash in its destination, and
        * the catch-all for everything under it.
        */
+      /**
+       * The AI Hackathon registration app (a static site on its own Vercel
+       * project) is shown at /hackathon the same way. That app loads its
+       * files from hackathon/... and rewrites /hackathon/* back to its own
+       * root, so the two rules below need no basePath on its side. Same
+       * split as /portal: an exact rule for the bare path, then the rest.
+       */
+      {
+        source: "/hackathon",
+        destination: "https://ai-hackathon-registration.vercel.app/hackathon",
+      },
+      {
+        source: "/hackathon/:path*",
+        destination: "https://ai-hackathon-registration.vercel.app/hackathon/:path*",
+      },
       {
         source: "/portal",
         destination: "https://calpolyvibecoding.vercel.app/portal",

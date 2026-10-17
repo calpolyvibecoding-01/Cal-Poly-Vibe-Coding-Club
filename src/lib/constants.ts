@@ -40,13 +40,10 @@ export const siteConfig = {
   memberPortalUrl: "/portal/join",
   /**
    * The AI Hackathon registration app — a SEPARATE deployment (its own
-   * Supabase backend), not this Next.js site. Live Vercel deployment under
-   * the same account as this site (project "ai-hackathon-registration").
-   * TODO: once a real subdomain (e.g. hackathon.calpolyvibecoding.com) is
-   * attached to that Vercel project, swap this to the custom domain instead
-   * of the *.vercel.app URL.
+   * Supabase backend and Vercel project "ai-hackathon-registration"), shown
+   * at /hackathon through the rewrite in next.config.ts, like /portal.
    */
-  hackathonUrl: "https://ai-hackathon-registration.vercel.app",
+  hackathonUrl: "/hackathon",
 };
 
 export const navItems = [
