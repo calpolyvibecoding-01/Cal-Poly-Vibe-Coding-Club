@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Give",
   description:
-    "Sponsor the CPVC × OCOB AI Hackathon (November 13–15, 2026) or make a gift to Cal Poly Vibe Coding. See what each sponsorship level includes.",
+    "Sponsor the CPVC × OCOB × CPE AI Hackathon (November 13–15, 2026) or make a gift to Cal Poly Vibe Coding. See what each sponsorship level includes.",
   alternates: { canonical: "/give" },
 };
 
@@ -73,7 +73,7 @@ export default function GivePage() {
               Sponsor a weekend of students building with AI
             </h1>
             <p className="section-intro !font-medium !leading-relaxed">
-              250 students from every major and three campuses spend a weekend
+              250 students from every major spend a weekend
               building working products with AI. Sponsorship is built around
               the four things a company takes away from a hackathon:
               candidates, product adoption, engagement with students, and
@@ -90,7 +90,13 @@ export default function GivePage() {
                 <dt className="text-xs uppercase tracking-[0.18em] text-neutral-500">
                   {stat.label}
                 </dt>
-                <dd className="text-4xl font-light leading-none tracking-[-0.03em] text-black">
+                <dd
+                  className={
+                    stat.value.length > 6
+                      ? "text-xl font-normal leading-snug tracking-[-0.02em] text-black md:text-2xl"
+                      : "text-4xl font-light leading-none tracking-[-0.03em] text-black"
+                  }
+                >
                   {stat.value}
                 </dd>
               </div>
@@ -146,9 +152,19 @@ export default function GivePage() {
                   aria-hidden="true"
                   className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-brand-700 to-brand-400"
                 />
-                <span className="mb-2 text-[11px] uppercase tracking-[0.2em] text-white/60">
-                  {tier.name}
-                </span>
+                <div className="mb-2 flex items-baseline justify-between gap-3">
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-white/60">
+                    {tier.name}
+                  </span>
+                  {"availability" in tier && tier.availability ? (
+                    <span
+                      className="text-[11px] font-semibold uppercase tracking-[0.14em]"
+                      style={{ color: "rgb(var(--color-accent-rgb))" }}
+                    >
+                      {tier.availability}
+                    </span>
+                  ) : null}
+                </div>
                 <p className="mb-1 !text-4xl !font-light !leading-none tracking-[-0.03em] !text-white">
                   {tier.amount}
                 </p>
@@ -235,8 +251,8 @@ export default function GivePage() {
             Interested in getting involved?
           </h2>
           <p className="section-intro mb-8 !font-medium !leading-relaxed">
-            Commitments by {hackathon.commitDeadline} appear in all printed
-            materials.
+            Commit by {hackathon.commitDeadline} to be on printed signage.
+            Challenge slots close the same day.
           </p>
           <ul className="grid gap-4 sm:grid-cols-2">
             {hackathon.contacts.map((contact) => (

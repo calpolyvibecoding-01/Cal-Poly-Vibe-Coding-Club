@@ -83,7 +83,7 @@ export const activities = [
   {
     title: "Hackathons",
     description:
-      "Our first hackathon, AI HACKATHON, is a weekend-long build sprint co-hosted with the Orfalea College of Business and the Cal Poly Entrepreneurship Club.",
+      "Our first hackathon, AI HACKATHON, is a weekend-long build sprint co-hosted with the Orfalea College of Business and the Cal Poly Entrepreneurs.",
     schedule: "November 13–15, 2026",
     href: siteConfig.hackathonUrl,
     cta: "Register for AI Hackathon",

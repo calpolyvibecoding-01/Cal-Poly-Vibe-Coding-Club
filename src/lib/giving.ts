@@ -1,18 +1,21 @@
 /**
- * Content for the /give page — sponsorship levels for the CPVC x OCOB AI
+ * Content for the /give page — sponsorship levels for the CPVC x OCOB x CPE AI
  * Hackathon. Source: "CPVC x OCOB AI Hackathon Sponsorship and Giving" PDF.
  * Update here if the tiers or benefits change; the page renders from this.
  */
 
 export const hackathon = {
-  name: "CPVC × OCOB AI Hackathon",
+  name: "CPVC × OCOB × CPE AI Hackathon",
   dates: "November 13–15, 2026",
-  commitDeadline: "October 9",
+  commitDeadline: "Fri Oct 30",
   stats: [
     { value: "250", label: "Participants" },
-    { value: "5", label: "Tracks" },
+    {
+      value: "1 presenting sponsor · 2 challenge slots",
+      label: "Sponsor spots",
+    },
     { value: "~65", label: "Teams" },
-    { value: "3", label: "Campuses: Cal Poly, USC, UCSB" },
+    { value: "CPVC · OCOB · CPE", label: "Co-hosts" },
   ],
   contacts: [
     {
@@ -45,6 +48,8 @@ export interface Benefit {
 export interface Tier {
   name: string;
   amount: string;
+  /** Spots available, shown on the card when set. */
+  availability?: string;
   /** Benefits that first appear at this tier. Higher tiers include all lower ones. */
   adds: readonly Benefit[];
 }
@@ -60,7 +65,7 @@ export const tiers: readonly Tier[] = [
       },
       {
         group: "Product adoption",
-        text: "Your platform credits in every participant's hands at check-in",
+        text: "Your credits, product or swag at check-in (if you provide them)",
       },
       {
         group: "Visible contribution",
@@ -89,6 +94,7 @@ export const tiers: readonly Tier[] = [
   {
     name: "Challenge",
     amount: "$2,500",
+    availability: "2 slots, close Fri Oct 30",
     adds: [
       {
         group: "Product adoption",
@@ -100,13 +106,14 @@ export const tiers: readonly Tier[] = [
       },
       {
         group: "Engagement with students",
-        text: "Judge seat on the panel",
+        text: "A judge for your challenge",
       },
     ],
   },
   {
     name: "Presenting",
     amount: "$5,000",
+    availability: "1 spot",
     adds: [
       {
         group: "Qualified candidates",
@@ -114,7 +121,7 @@ export const tiers: readonly Tier[] = [
       },
       {
         group: "Engagement with students",
-        text: "Friday main-stage keynote, 20 minutes (shared if more than one Presenting sponsor)",
+        text: "Friday main-stage keynote, 20 minutes",
       },
     ],
   },
