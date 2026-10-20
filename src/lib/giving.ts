@@ -82,7 +82,7 @@ export const tiers: readonly Tier[] = [
       },
       {
         group: "Visible contribution",
-        text: "Logo on the event shirt, plus a named hospitality moment: a meal, coffee station, or awards reception",
+        text: "A named hospitality moment: a meal, coffee station, or awards reception",
       },
     ],
   },
